@@ -1,9 +1,17 @@
-code = files('module.c')
+cc = meson.get_compiler('c')
+m_dep = cc.find_library('m', required : false)
 
-lib = static_library('tscl-c',
+code = files(
+    'command.c', 'errors.c',
+    'money.c',   'number.c',
+    'parser.c',  'random.c',
+    'directory.c')
+
+lib = static_library('tscl-xutil-c',
     code,
+    dependencies: m_dep,
     include_directories: dir)
 
-tscl_c_dep = declare_dependency(
+tscl_xutil_c_dep = declare_dependency(
     link_with: lib,
     include_directories: dir)
