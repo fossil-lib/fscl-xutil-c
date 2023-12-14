@@ -9,7 +9,7 @@ code = files(
 
 lib = static_library('tscl-xutil-c',
     code,
-    link_with: m_dep,
+    dependencies: m_dep,
     include_directories: dir)
 
 tscl_xutil_c_dep = declare_dependency(
