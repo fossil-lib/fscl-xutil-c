@@ -32,6 +32,7 @@
 #include <trilobite/xutil/command.h>
 #include <stdio.h>
 
+
 // Define a maximum buffer size for command output
 enum {MAX_OUTPUT_SIZE = 555};
 
