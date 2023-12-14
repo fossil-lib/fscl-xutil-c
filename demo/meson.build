@@ -1,8 +1,9 @@
 if get_option('with_demo').enabled()
     demo_apps = [
-        'prog']
+        'command', 'errors', 'money', 'number',
+        'parser',  'random', 'directory']
 
     foreach iter : demo_apps
-        executable('demo_' + iter, 'demo_' + iter + '.c', dependencies : [trilo_c_dep])
+        executable('demo_' + iter, 'demo_' + iter + '.c', dependencies : [tscl_xutil_c_dep])
     endforeach
 endif

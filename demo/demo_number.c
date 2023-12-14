@@ -1,5 +1,5 @@
 /*  ----------------------------------------------------------------------------
-    File: demo.c
+    File: demo_number.c
 
     Description:
     This demo file serves as a showcase of the Trilobite Stdlib in action. It provides
@@ -29,25 +29,52 @@
     (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
     ----------------------------------------------------------------------------
 */
-#include <trilobite/module.h>
-#include <stdio.h>
+#include "trilobite/xutil/number.h" // lib source code
+#include <stdio.h> // using the printf functions
+#include <stdlib.h>
 
 int main() {
-    int result = add(5, 3);
+    puts("Trilobite Math Calculator");
 
-    if (result == 8) {
-        printf("add() test passed!\n");
-    } else {
-        printf("add() test failed. Expected: 8, Got: %d\n", result);
-    } // end statment
+    cnumber num1, num2, result;
+    char operation;
 
-    result = subtract(5, 3);
+    // Input first number
+    printf("Enter the first number (integer or English word): ");
+    scanf("%s", num1.data.wordValue);
+    num1.type = isalpha(num1.data.wordValue[0]) ? 1 : 0;
 
-    if (result == 2) {
-        printf("subtract() test passed!\n");
-    } else {
-        printf("subtract() test failed. Expected: 2, Got: %d\n", result);
-    } // end statment
+    // Input operation
+    printf("Enter the operation (+, -, *, /): ");
+    scanf(" %c", &operation);
+
+    // Input second number
+    printf("Enter the second number (integer or English word): ");
+    scanf("%s", num2.data.wordValue);
+    num2.type = isalpha(num2.data.wordValue[0]) ? 1 : 0;
+
+    // Perform the requested operation
+    switch (operation) {
+        case '+':
+            result = number_add(num1, num2);
+            break;
+        case '-':
+            result = number_subtract(num1, num2);
+            break;
+        case '*':
+            result = number_multiply(num1, num2);
+            break;
+        case '/':
+            result = number_divide(num1, num2);
+            break;
+        default:
+            fprintf(stderr, "Error: Invalid operation.\n");
+            return EXIT_FAILURE;
+    }
+
+    // Display the result
+    printf("Result: ");
+    number_print(result);
 
     return 0;
 } // end of func
