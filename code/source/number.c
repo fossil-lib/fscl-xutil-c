@@ -29,7 +29,7 @@
     (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
     ----------------------------------------------------------------------------
 */
-#include "trilobite/xtype/number.h"
+#include "trilobite/xutil/number.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

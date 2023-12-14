@@ -29,7 +29,7 @@
     (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
     ----------------------------------------------------------------------------
 */
-#include "trilobite/xtype/money.h"
+#include "trilobite/xutil/money.h"
 #include <stdio.h>
 #include <math.h>
 
