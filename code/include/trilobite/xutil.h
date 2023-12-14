@@ -37,8 +37,8 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_MOD_H
-#define TSCL_MOD_H
+#ifndef TSCL_UTIL_H
+#define TSCL_UTIL_H
 
 #ifdef __cplusplus
 extern "C"
