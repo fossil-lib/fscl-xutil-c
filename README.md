@@ -2,18 +2,6 @@
 
 The TSCL Utility is a powerful toolkit designed to enhance the development process by providing essential libraries for error handling, random seed generation, command execution, and filesystem manipulation. Crafted with precision and efficiency in mind, these libraries empower developers to create robust and error-resilient applications with ease.
 
-1. **Error Handling Library:**
-   TSCL's Error Handling Library simplifies the complex task of managing errors in your code. With intuitive functions and comprehensive error reporting, developers can easily identify, handle, and log errors, ensuring a smoother debugging process and increased code reliability.
-
-2. **Random Seed Generator:**
-   Enhance the randomness in your applications with the Random Seed Generator. This library allows developers to generate and manage random seeds, crucial for applications requiring unpredictable outcomes, such as simulations, games, and cryptographic systems.
-
-3. **Command Execution Module:**
-   Execute system commands seamlessly with TSCL's Command Execution Module. This library provides a secure and efficient way to integrate command-line operations into your applications, facilitating interactions with the underlying system and external processes.
-
-4. **Filesystem Manipulation Tools:**
-   Simplify file and directory operations using TSCL's Filesystem Manipulation Tools. Whether you're reading, writing, or managing files, this library streamlines common filesystem tasks, improving overall file handling efficiency and code readability.
-
 Incorporate the TSCL Utility into your development workflow to experience enhanced productivity and code quality. Whether you're a seasoned developer or just starting, these libraries provide a solid foundation for creating reliable, scalable, and maintainable software applications. Elevate your coding experience with TSCL Utility – where efficiency meets simplicity.
 
 ## Who is This For?
