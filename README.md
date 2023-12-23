@@ -23,18 +23,18 @@ Before getting started, make sure you have the following installed:
 
 1. **Create a Wrap File**:
 
-Create a directory named subprojects in the root directory, next create a file named `tscl-x<name>-c.wrap` in the `subprojects` directory of your project with the following content:
+Create a directory named subprojects in the root directory, next create a file named `tscl-xutil-c.wrap` in the `subprojects` directory of your project with the following content:
 
    ```bash
    # ================ #
    #  TSCL Wrap File. #
    # ================ #
    [wrap-git]
-   url = https://github.com/trilobite-stdlib/tscl-<name>-c.git
+   url = https://github.com/trilobite-stdlib/tscl-xutil-c.git
    revision = main
    
    [provide]
-   tscl-x<name>-c = tscl_x<name>_c_dep
+   tscl-xutil-c = tscl_xutil_c_dep
    ```
 
 2. **Integrate Wrap File in Meson Build**:
@@ -44,7 +44,7 @@ Create a directory named subprojects in the root directory, next create a file n
        default_options : ['warning_level=3'])
 
    exe = executable('my_project', 'my_project.c',
-       dependencies : dependency('tscl-x<name>-c'), # add this line
+       dependencies : dependency('tscl-xutil-c'), # add this line
        install : true)
 
    test('basic', exe)
@@ -60,26 +60,25 @@ Create a directory named subprojects in the root directory, next create a file n
 
 Here is the link to the [Refrence Docs](https://trilobite.home.blog/reference-docs/)
 
-## Including the Demo and Running Tests
+## Running Tests
 
-To include the demo and run tests, you can use the following options when configuring the build:
+To include the run tests, you can use the following option when configuring the build:
 
-- **Including the Demo**: Add `-Dwith_demo=enabled` when configuring the build.
 - **Running Tests**: Add `-Dwith_test=enabled` when configuring the build.
 
 Example:
 
 ```bash
-meson setup builddir -Dwith_demo=enabled -Dwith_test=enabled
+meson setup builddir -Dwith_test=enabled
 ```
 
 ## Contributing
 
-If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/dreamer-coding-555/meson-lib-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
+If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
 
 ## Feedback and Support
 
-If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/dreamer-coding-555/meson-lib-c/issues).
+If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c/issues).
 
 ## License
 

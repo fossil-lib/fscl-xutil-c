@@ -37,72 +37,36 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_DIRECTORY_H
-#define TSCL_DIRECTORY_H
+#ifndef TSCL_LAVALAMP_H
+#define TSCL_LAVALAMP_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-// Structure to represent a directory
+// Simulate the virtual lava lamp state
 typedef struct {
-    char* path;
-} cdirectory;
+    double position;
+    double velocity;
+} clavalamp;
 
-/**
- * @brief Creates a new directory.
- *
- * @param path The path of the directory to be created.
- * @return A structure representing the created directory.
- */
-cdirectory directory_create(const char* path);
+// =================================================================
+// Avalable functions
+// =================================================================
+clavalamp* tscl_lava_create(int numLamps);
+void tscl_lava_erase(clavalamp* lamps);
+void tscl_lava_capture_state(clavalamp* lamp);
+void tscl_lava_combine_states(clavalamp* lamps, int numLamps, char* combinedState);
+unsigned int tscl_lava_hash_combined_state(const char* combinedState, int length);
+void tscl_lava_print_state(const clavalamp* lamp);
+void tscl_lava_visualize(const clavalamp* lamps, int numLamps);
+void tscl_lava_analyze(const clavalamp* lamps, int numLamps);
+void tscl_lava_reset(clavalamp* lamps, int numLamps);
+void tscl_lava_randomize(clavalamp* lamps, int numLamps);
+void tscl_lava_seed(unsigned int seed);
+int tscl_lava_random(void);
 
-/**
- * @brief Deletes a directory.
- *
- * @param directory Pointer to the structure representing the directory to be deleted.
- */
-void directory_erase(cdirectory* directory);
-
-/**
- * @brief Lists files in a directory.
- *
- * @param directory Pointer to the structure representing the directory to list files in.
- */
-void directory_list_files(const cdirectory* directory);
-
-/**
- * @brief Creates a subdirectory within a parent directory.
- *
- * @param parent Pointer to the structure representing the parent directory.
- * @param subdirectory_name Name of the subdirectory to be created.
- */
-void directory_create_subdirectory(const cdirectory* parent, const char* subdirectory_name);
-
-/**
- * @brief Checks if a directory exists.
- *
- * @param directory Pointer to the structure representing the directory to check.
- * @return 1 if true (directory exists), 0 if false.
- */
-int directory_exists(const cdirectory* directory);
-
-/**
- * @brief Removes a file within a directory.
- *
- * @param directory Pointer to the structure representing the directory containing the file.
- * @param filename Name of the file to be removed.
- */
-void directory_remove_file(const cdirectory* directory, const char* filename);
-
-/**
- * @brief Navigates to a different directory.
- *
- * @param directory Pointer to the structure representing the current directory.
- * @param new_path The path of the directory to navigate to.
- */
-void directory_change_directory(cdirectory* directory, const char* new_path);
 
 #ifdef __cplusplus
 }

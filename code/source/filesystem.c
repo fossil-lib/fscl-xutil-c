@@ -29,7 +29,7 @@
     (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
     ----------------------------------------------------------------------------
 */
-#include "trilobite/xutil/directory.h"
+#include "trilobite/xutil/filesystem.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,15 +47,15 @@
 #endif
 
 // Function to create a new directory
-cdirectory directory_create(const char* path) {
-    cdirectory new_directory;
+cfilesystem tscl_filesys_create(const char* path) {
+    cfilesystem new_directory;
     new_directory.path = (char*)malloc(strlen(path) + 1);
     strcpy(new_directory.path, path);
     return new_directory;
 } // end of func
 
 // Function to delete a directory
-void directory_erase(cdirectory* directory) {
+void tscl_filesys_erase(cfilesystem* directory) {
     if (directory) {
         free(directory->path);
         directory->path = NULL;
@@ -63,7 +63,7 @@ void directory_erase(cdirectory* directory) {
 } // end of func
 
 // Function to list files in a directory
-void directory_list_files(const cdirectory* directory) {
+void tscl_filesys_list_files(const cfilesystem* directory) {
     if (directory) {
         printf("Listing files in directory: %s\n", directory->path);
 
@@ -92,25 +92,25 @@ void directory_list_files(const cdirectory* directory) {
 } // end of func
 
 // Function to create a subdirectory
-void directory_create_subdirectory(const cdirectory* parent, const char* subdirectory_name) {
+void tscl_filesys_create_subdirectory(const cfilesystem* parent, const char* subtscl_filesys_name) {
     if (parent) {
-        printf("Creating subdirectory %s in %s\n", subdirectory_name, parent->path);
+        printf("Creating subdirectory %s in %s\n", subtscl_filesys_name, parent->path);
 
 #ifdef _WIN32
         // Windows-specific subdirectory creation logic
         _mkdir(strcat(parent->path, "\\"));
-        _mkdir(strcat(parent->path, subdirectory_name));
+        _mkdir(strcat(parent->path, subtscl_filesys_name));
 #else
         // POSIX-specific subdirectory creation logic
-        char subdirectory_path[256];
-        snprintf(subdirectory_path, sizeof(subdirectory_path), "%s/%s", parent->path, subdirectory_name);
-        mkdir(subdirectory_path, 0777);
+        char subtscl_filesys_path[256];
+        snprintf(subtscl_filesys_path, sizeof(subtscl_filesys_path), "%s/%s", parent->path, subtscl_filesys_name);
+        mkdir(subtscl_filesys_path, 0777);
 #endif
     }
 } // end of func
 
 // Function to check if a directory exists
-int directory_exists(const cdirectory* directory) {
+int tscl_filesys_exists(const cfilesystem* directory) {
     if (directory) {
 #ifdef _WIN32
         struct _stat info;
@@ -124,7 +124,7 @@ int directory_exists(const cdirectory* directory) {
 } // end of func
 
 // Function to remove a file within a directory
-void directory_remove_file(const cdirectory* directory, const char* filename) {
+void tscl_filesys_remove_file(const cfilesystem* directory, const char* filename) {
     if (directory) {
         char filepath[256];
         snprintf(filepath, sizeof(filepath), "%s%c%s", directory->path, PATH_SEPARATOR, filename);
@@ -134,9 +134,9 @@ void directory_remove_file(const cdirectory* directory, const char* filename) {
 } // end of func
 
 // Function to navigate to a different directory
-void directory_change_directory(cdirectory* directory, const char* new_path) {
+void tscl_filesys_change_directory(cfilesystem* directory, const char* new_path) {
     if (directory) {
-        directory_erase(directory);
+        tscl_filesys_erase(directory);
         directory->path = (char*)malloc(strlen(new_path) + 1);
         strcpy(directory->path, new_path);
     }

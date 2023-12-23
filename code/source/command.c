@@ -49,7 +49,7 @@
 typedef char* ccommand;
 
 // Function to run a command
-int command(ccommand process) {
+int tscl_command(ccommand process) {
     int result = system(process);
     if (result == -1) {
         perror("Error executing command");
@@ -58,8 +58,8 @@ int command(ccommand process) {
 } // end of func
 
 // Function to check if the command executed successfully
-int command_success(ccommand process) {
-    int result = command(process);
+int tscl_command_success(ccommand process) {
+    int result = tscl_command(process);
     if (result == 0) {
         printf("Command '%s' executed successfully.\n", process);
     } else {
@@ -69,7 +69,7 @@ int command_success(ccommand process) {
 } // end of func
 
 // Function to get the output of a command
-int command_output(ccommand process, char *output, size_t output_size) {
+int tscl_command_output(ccommand process, char *output, size_t output_size) {
 #ifdef _WIN32
     FILE *pipe = _popen(process, "r");
     if (!pipe) {
@@ -154,7 +154,7 @@ int command_output(ccommand process, char *output, size_t output_size) {
 } // end of func
 
 // Function to check if a command exists and is executable
-int command_exists(ccommand process) {
+int tscl_command_exists(ccommand process) {
 #ifdef _WIN32
     // On Windows, check if the command exists in the system path
     const char* env_path = getenv("PATH");
@@ -188,13 +188,13 @@ int command_exists(ccommand process) {
 } // end of function
 
 // Function to check if a directory exists
-int command_erase_exists(ccommand path) {
+int tscl_command_erase_exists(ccommand path) {
     struct stat info;
     return stat(path, &info) == 0 && S_ISDIR(info.st_mode);
 } // end of func
 
 // Function to concatenate strings safely
-void command_strcat_safe(char *dest, const char *src, size_t dest_size) {
+void tscl_command_strcat_safe(char *dest, const char *src, size_t dest_size) {
     size_t dest_len = strlen(dest);
     size_t src_len = strlen(src);
 
