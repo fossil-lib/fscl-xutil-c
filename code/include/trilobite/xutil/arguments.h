@@ -99,7 +99,6 @@ void tscl_arg_parse_usage(const char* program_name, coption* options, int num_op
 int tscl_arg_parse_has(coption* options, int num_options, const char* option_name);
 void tscl_arg_parse(ccommandline* cmd, coption* options, int num_options);
 void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options);
-void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options);
 void tscl_arg_print_parsed_options(coption* options, int num_options);
 void tscl_arg_reset_parsed_flags(coption* options, int num_options);
 combo_choice* tscl_arg_create_combo_choices(const char* names[], const int values[], int num_choices);

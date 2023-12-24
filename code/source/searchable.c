@@ -101,7 +101,7 @@ int tscl_searchable_jump_search(const csearchable *arr, int size, const csearcha
     int step = sqrt(size);
     int prev = 0;
 
-    while (arr[min(step, size) - 1].integer < key->integer) {
+    while (arr[fmin(step, size) - 1].integer < key->integer) {
         prev = step;
         step += sqrt(size);
 
@@ -110,7 +110,7 @@ int tscl_searchable_jump_search(const csearchable *arr, int size, const csearcha
         }
     }
 
-    for (int i = prev; i < min(step, size); i++) {
+    for (int i = prev; i < fmin(step, size); i++) {
         if (tscl_searchable_compare(&arr[i], key) == 0) {
             return i;  // Return the index if the key is found
         }

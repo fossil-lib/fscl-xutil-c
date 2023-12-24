@@ -69,15 +69,6 @@ void tscl_sortable_insertion_sort(csortable *arr, int size) {
     }
 }
 
-// Function to perform quicksort on an array of csortable values
-void tscl_sortable_quicksort(csortable *arr, int low, int high) {
-    if (low < high) {
-        int pi = tscl_sortable_quicksort_partition(arr, low, high);
-        tscl_sortable_quicksort(arr, low, pi - 1);
-        tscl_sortable_quicksort(arr, pi + 1, high);
-    }
-}
-
 // Utility function for quicksort to partition the array
 int tscl_sortable_quicksort_partition(csortable *arr, int low, int high) {
     csortable pivot = arr[high];
@@ -92,6 +83,15 @@ int tscl_sortable_quicksort_partition(csortable *arr, int low, int high) {
 
     tscl_sortable_swap(&arr[i + 1], &arr[high]);
     return (i + 1);
+}
+
+// Function to perform quicksort on an array of csortable values
+void tscl_sortable_quicksort(csortable *arr, int low, int high) {
+    if (low < high) {
+        int pi = tscl_sortable_quicksort_partition(arr, low, high);
+        tscl_sortable_quicksort(arr, low, pi - 1);
+        tscl_sortable_quicksort(arr, pi + 1, high);
+    }
 }
 
 // Function to perform bubblesort on an array of csortable values

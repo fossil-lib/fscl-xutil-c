@@ -143,25 +143,6 @@ void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_op
     }
 }
 
-void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options) {
-    for (int i = 1; i < cmd->argc; ++i) {
-        const char* arg = cmd->argv[i];
-        if (arg[0] == '-') {
-            int recognized = 0;
-            for (int j = 0; j < num_options; ++j) {
-                if (strcmp(arg + 1, options[j].name) == 0) {
-                    recognized = 1;
-                    break;
-                }
-            }
-            if (!recognized) {
-                fprintf(stderr, "Error: Unrecognized option '%s'\n", arg);
-                exit(EXIT_FAILURE);
-            }
-        }
-    }
-}
-
 void tscl_arg_print_parsed_options(coption* options, int num_options) {
     for (int i = 0; i < num_options; ++i) {
         printf("Option: %s, Parsed: %s\n", options[i].name, options[i].parsed ? "true" : "false");
