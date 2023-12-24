@@ -56,7 +56,7 @@ bool tscl_assume_this_or_that(bool condition1, bool condition2) {
 }
 
 bool tscl_assume_this_unless(bool condition1, bool condition2) {
-    return tscl_assume(~condition1 | condition2, "Conditions not met: tscl_assume_this_unless");
+    return tscl_assume(!(condition1) || condition2, "Conditions not met: tscl_assume_this_unless");
 }
 
 bool tscl_assume_this_not_that(bool condition1, bool condition2) {
