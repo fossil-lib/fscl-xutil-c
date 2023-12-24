@@ -71,7 +71,7 @@ void tscl_sortable_quicksort(csortable *arr, int low, int high) {
 }
 
 // Utility function for quicksort to partition the array
-int tscl_sortablequicksort_partition(csortable *arr, int low, int high) {
+int tscl_sortable_quicksort_partition(csortable *arr, int low, int high) {
     csortable pivot = arr[high];
     int i = (low - 1);
 
