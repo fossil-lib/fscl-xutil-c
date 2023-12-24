@@ -29,7 +29,7 @@ XTEST_CASE(test_tscl_arg_parse) {
     const char* argv[] = {"program", "-number", "42", "-name", "John", "-flag", "-choice", "choice2", "-feature", "enable"};
     const int argc = sizeof(argv) / sizeof(argv[0]);
 
-    ccommandline cmd = {argc, argv};
+    ccommandline cmd = {argc, (char **)argv};
     
     coption options[] = {
         {"option1", COPTION_TYPE_INT, {.int_val = 0}, NULL, 0, 0},
