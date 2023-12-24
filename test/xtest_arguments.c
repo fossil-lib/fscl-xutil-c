@@ -18,7 +18,7 @@ XTEST_CASE(test_tscl_arg_parse) {
     const int argc = sizeof(argv) / sizeof(argv[0]);
 
     // Initialize the command line structure
-    ccommandline cmd = {argc, argv};
+    ccommandline cmd = {argc, (char**)argv};  // Cast argv to char**
 
     // Define combo choices
     const char* combo_names[] = {"choice1", "choice2", "choice3"};
@@ -32,7 +32,7 @@ XTEST_CASE(test_tscl_arg_parse) {
     // Define options
     const char* option_names[] = {"number", "name", "flag", "choice", "feature"};
     coption_type option_types[] = {COPTION_TYPE_INT, COPTION_TYPE_STRING, COPTION_TYPE_BOOL, COPTION_TYPE_COMBO, COPTION_TYPE_FEATURE};
-    coption_value option_values[] = {{0}, {NULL}, {0}, {0, combo_choices, 3}, {FEATURE_AUTO}};
+    coption_value option_values[] = {{0}, {NULL}, {0}, {0, .combo_val = combo_choices, .num_choices = 3}, {.feature_val = FEATURE_AUTO}};
 
     // Create options array
     coption* options = malloc(sizeof(coption) * 5);
