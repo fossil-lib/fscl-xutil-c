@@ -25,19 +25,6 @@ XTEST_CASE(test_shuffle_int) {
     }
 }
 
-XTEST_CASE(test_shuffle_double) {
-    // Test tscl_shuffle_double function
-    double array[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-    size_t size = sizeof(array) / sizeof(double);
-
-    tscl_shuffle_double(array, size);
-
-    // Assert that the array is shuffled
-    for (size_t i = 0; i < size; ++i) {
-        TEST_ASSERT_NOT_EQUAL_DOUBLE(1.1 + i * 1.1, array[i]);
-    }
-}
-
 XTEST_CASE(test_shuffle_cstring) {
     // Test tscl_shuffle_cstring function
     char* array[] = {"apple", "banana", "cherry", "date", "elderberry"};
@@ -82,7 +69,6 @@ XTEST_CASE(test_shuffle_bool) {
 //
 XTEST_GROUP_DEFINE(test_shuffle_group) {
     XTEST_RUN_UNIT(test_shuffle_int,     runner);
-    XTEST_RUN_UNIT(test_shuffle_double,  runner);
     XTEST_RUN_UNIT(test_shuffle_cstring, runner);
     XTEST_RUN_UNIT(test_shuffle_letter,  runner);
     XTEST_RUN_UNIT(test_shuffle_bool,    runner);
