@@ -37,24 +37,15 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_SHUFFLE_H
+#define TSCL_SHUFFLE_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/searchable.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/sortable.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+//
 
 #ifdef __cplusplus
 }

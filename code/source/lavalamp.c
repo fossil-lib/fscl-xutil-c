@@ -1,5 +1,5 @@
 /*  ----------------------------------------------------------------------------
-    File: random.c
+    File: lavalamp.c
 
     Description:
     This source file contains the code entry point for the Trilobite Stdlib project.
