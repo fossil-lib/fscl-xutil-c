@@ -49,14 +49,14 @@ extern "C"
 
 // Structure to hold information about the operating system
 typedef struct {
-    const char* name;
-    const char* version;
+    char* name;
+    char* version;
 } cos_info;
 
 // Structure to hold information about the CPU architecture
 typedef struct {
-    const char* name;
-    const char* architecture;
+    char* name;
+    char* architecture;
 } carch_info;
 
 // =================================================================
