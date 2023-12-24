@@ -56,9 +56,17 @@ bool tscl_assume_this_or_that(bool condition1, bool condition2) {
 }
 
 bool tscl_assume_this_unless(bool condition1, bool condition2) {
-    return tscl_assume(!(condition1) || condition2, "Conditions not met: tscl_assume_this_unless");
+    return tscl_assume(~condition1 | condition2, "Conditions not met: tscl_assume_this_unless");
 }
 
 bool tscl_assume_this_not_that(bool condition1, bool condition2) {
     return tscl_assume(condition1 & !condition2, "Conditions not met: tscl_assume_this_not_that");
+}
+
+bool tscl_assume_range(int value, int min, int max) {
+    return tscl_assume(value >= min && value <= max, "Value is not within the specified range");
+}
+
+bool tscl_assume_not_cnullptr(const void *ptr) {
+    return tscl_assume(ptr != NULL, "Pointer is unexpectedly NULL");
 }
