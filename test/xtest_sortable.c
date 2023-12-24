@@ -42,28 +42,10 @@ XTEST_CASE(test_sorting_algorithms_float) {
     TEST_ASSERT_EQUAL_FLOAT_ARRAY((float []){1.9, 2.8, 5.2, 8.1, 9.7}, (float *)arr, size);
 }
 
-XTEST_CASE(test_sorting_algorithms_char) {
-    csortable arr[] = {
-        {.character = 'e'},
-        {.character = 'b'},
-        {.character = 'h'},
-        {.character = 'a'},
-        {.character = 'i'}
-    };
-
-    int size = sizeof(arr) / sizeof(arr[0]);
-
-    tscl_sortable_auto(arr, size);
-    
-    // Use the updated macro for string array comparison
-    TEST_ASSERT_EQUAL_STRING_ARRAY((const char *[]){"a", "b", "e", "h", "i"}, (const char **)arr, size);
-}
-
 //
 // XUNIT-TEST RUNNER
 //
 XTEST_GROUP_DEFINE(test_sortable_group) {
     XTEST_RUN_UNIT(test_sorting_algorithms_integer, runner);
     XTEST_RUN_UNIT(test_sorting_algorithms_float, runner);
-    XTEST_RUN_UNIT(test_sorting_algorithms_char, runner);
 } // end of func

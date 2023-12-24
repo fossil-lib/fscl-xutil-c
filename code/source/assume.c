@@ -67,6 +67,6 @@ bool tscl_assume_range(int value, int min, int max) {
     return tscl_assume(value >= min && value <= max, "Value is not within the specified range");
 }
 
-bool tscl_assume_not_cnullptr(const void *ptr) {
+bool tscl_assume_not_cnullptr(void *ptr) {
     return tscl_assume(ptr != NULL, "Pointer is unexpectedly NULL");
 }

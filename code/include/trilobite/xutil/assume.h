@@ -57,7 +57,7 @@ bool tscl_assume_this_or_that(bool condition1, bool condition2);
 bool tscl_assume_this_unless(bool condition1, bool condition2);
 bool tscl_assume_this_not_that(bool condition1, bool condition2);
 bool tscl_assume_range(int value, int min, int max);
-bool tscl_assume_not_cnullptr(const void *ptr);
+bool tscl_assume_not_cnullptr(void *ptr);
 
 #ifdef __cplusplus
 }
