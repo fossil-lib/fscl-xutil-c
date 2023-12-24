@@ -42,9 +42,7 @@ XTEST_GROUP_EXTERN(test_tscl_filesys_group);
 XTEST_GROUP_EXTERN(test_random_group);
 XTEST_GROUP_EXTERN(test_platform_group);
 XTEST_GROUP_EXTERN(test_ranges_group);
-XTEST_GROUP_EXTERN(test_search_group);
 XTEST_GROUP_EXTERN(test_shuffle_group);
-XTEST_GROUP_EXTERN(test_sortable_group);
 
 //
 // XUNIT-TEST RUNNER
@@ -60,9 +58,7 @@ int main(int argc, char **argv) {
     XTEST_GROUP_REGISTER(test_random_group,       runner);
     XTEST_GROUP_REGISTER(test_platform_group,     runner);
     XTEST_GROUP_REGISTER(test_ranges_group,       runner);
-    XTEST_GROUP_REGISTER(test_search_group,       runner);
     XTEST_GROUP_REGISTER(test_shuffle_group,      runner);
-    XTEST_GROUP_REGISTER(test_sortable_group,     runner);
 
     return XTEST_RUNNER_END(runner);
 } // end of func
