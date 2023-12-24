@@ -36,9 +36,9 @@
 //
 XTEST_GROUP_EXTERN(test_tscl_filesys_group);
 XTEST_GROUP_EXTERN(test_command_group);
-XTEST_GROUP_EXTERN(test_errors_group);
-XTEST_GROUP_EXTERN(test_money_group);
-XTEST_GROUP_EXTERN(test_number_group);
+XTEST_GROUP_EXTERN(test_ranges_group);
+XTEST_GROUP_EXTERN(test_assume_group);
+XTEST_GROUP_EXTERN(test_platform_group);
 XTEST_GROUP_EXTERN(test_parser_group);
 XTEST_GROUP_EXTERN(test_random_group);
 
@@ -50,9 +50,9 @@ int main(int argc, char **argv) {
 
     XTEST_GROUP_REGISTER(test_tscl_filesys_group, runner);
     XTEST_GROUP_REGISTER(test_command_group, runner);
-    XTEST_GROUP_REGISTER(test_errors_group, runner);
-    XTEST_GROUP_REGISTER(test_money_group, runner);
-    XTEST_GROUP_REGISTER(test_number_group, runner);
+    XTEST_GROUP_REGISTER(test_ranges_group, runner);
+    XTEST_GROUP_REGISTER(test_assume_group, runner);
+    XTEST_GROUP_REGISTER(test_platform_group, runner);
     XTEST_GROUP_REGISTER(test_parser_group, runner);
     XTEST_GROUP_REGISTER(test_random_group, runner);
 
