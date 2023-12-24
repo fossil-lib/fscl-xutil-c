@@ -45,28 +45,17 @@ extern "C"
 {
 #endif
 
-/**
- * Adds two integers.
- *
- * This function takes two integer values, 'a' and 'b', and returns their sum.
- *
- * @param a The first integer.
- * @param b The second integer.
- * @return The sum of 'a' and 'b'.
- */
-int add(int a, int b);
+#include "xutil/filesystem.h"
+#include "xutil/arguments.h"
+#include "xutil/lavalamp.h"
+#include "xutil/command.h"
+#include "xutil/platform.h"
+#include "xutil/assume.h"
+#include "xutil/ranges.h"
 
-/**
- * Subtracts one integer from another.
- *
- * This function takes two integer values, 'a' and 'b', and returns the result of
- * subtracting 'b' from 'a'.
- *
- * @param a The integer from which 'b' will be subtracted.
- * @param b The integer to subtract from 'a'.
- * @return The result of 'a' - 'b'.
- */
-int subtract(int a, int b);
+// #include "xutil/searchable.h"
+// #include "xutil/sortable.h"
+// #include "xutil/shuffle.h"
 
 #ifdef __cplusplus
 }
