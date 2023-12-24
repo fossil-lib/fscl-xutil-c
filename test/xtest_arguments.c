@@ -28,7 +28,7 @@ XTEST_CASE(test_tscl_arg_parse) {
     // Test tscl_arg_parse function
     const char* argv[] = {"test_program", "-option1", "42"};
     int argc = sizeof(argv) / sizeof(argv[0]);
-    ccommandline cmd = {argc, argv};
+    ccommandline cmd = {argc, (const char *)argv};
 
     coption options[] = {
         {"option1", COPTION_TYPE_INT, {.int_val = 0}, NULL, 0, 0},

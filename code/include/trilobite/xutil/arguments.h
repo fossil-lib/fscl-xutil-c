@@ -89,7 +89,7 @@ typedef struct {
 // Command line structure
 typedef struct {
     int argc;
-    const char** argv;
+    char** argv;
 } ccommandline;
 
 // =================================================================
