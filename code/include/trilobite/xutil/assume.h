@@ -37,22 +37,27 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_ASSUME_H
+#define TSCL_ASSUME_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+#include <stdbool.h>
+
+// =================================================================
+// Avalable functions
+// =================================================================
+bool tscl_assume(bool condition, const char *message);
+bool tscl_assume_this(bool condition);
+bool tscl_assume_this_and_that(bool condition1, bool condition2);
+bool tscl_assume_this_or_that(bool condition1, bool condition2);
+bool tscl_assume_this_unless(bool condition1, bool condition2);
+bool tscl_assume_this_not_that(bool condition1, bool condition2);
+bool tscl_assume_range(int value, int min, int max);
+bool tscl_assume_not_cnullptr(void *ptr);
 
 #ifdef __cplusplus
 }

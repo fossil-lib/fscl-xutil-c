@@ -5,8 +5,8 @@ if get_option('with_test').enabled()
 
     test_src = ['xunit_runner.c']
     test_cubes = [
-        'command', 'errors', 'money', 'number',
-        'parser',  'random', 'directory']
+        'command', 'lavalamp', 'filesystem', 'arguments', 'assume',
+        'shuffle', 'ranges', 'platform']
 
     foreach cube : test_cubes
         test_src += ['xtest_' + cube + '.c']

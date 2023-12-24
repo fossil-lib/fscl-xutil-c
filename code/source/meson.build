@@ -2,10 +2,10 @@ cc = meson.get_compiler('c')
 m_dep = cc.find_library('m', required : false)
 
 code = files(
-    'command.c', 'errors.c',
-    'money.c',   'number.c',
-    'parser.c',  'random.c',
-    'directory.c')
+    'command.c',    'lavalamp.c',
+    'filesystem.c', 'arguments.c',
+    'shuffle.c',    'ranges.c',
+    'platform.c',   'assume.c',)
 
 lib = static_library('tscl-xutil-c',
     code,

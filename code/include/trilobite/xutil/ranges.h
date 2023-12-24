@@ -37,22 +37,35 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_RANGES_H
+#define TSCL_RANGES_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+#include <stdbool.h>
+
+// Represents a range with a minimum and maximum value
+typedef struct {
+    int min;
+    int max;
+} crange;
+
+// =================================================================
+// Avalable functions
+// =================================================================
+bool tscl_crange_contains(const crange *range, int value);
+bool tscl_crange_overlaps(const crange *range1, const crange *range2);
+crange tscl_crange_intersection(const crange *range1, const crange *range2);
+bool tscl_crange_is_empty(const crange *range);
+bool tscl_crange_is_valid(const crange *range);
+crange tscl_crange_create(int min, int max);
+bool tscl_crange_is_subset(const crange *subRange, const crange *superRange);
+bool tscl_crange_is_equal(const crange *range1, const crange *range2);
+crange tscl_crange_union(const crange *range1, const crange *range2);
+crange tscl_crange_expand(const crange *range, int amount);
 
 #ifdef __cplusplus
 }

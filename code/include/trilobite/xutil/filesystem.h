@@ -37,22 +37,29 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_FILESYSTEM_H
+#define TSCL_FILESYSTEM_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+// Structure to represent a directory
+typedef struct {
+    char* path;
+} cfilesystem;
+
+// =================================================================
+// Avalable functions
+// =================================================================
+cfilesystem tscl_filesys_create(const char* path);
+void tscl_filesys_erase(cfilesystem* directory);
+void tscl_filesys_list_files(const cfilesystem* directory);
+void tscl_filesys_create_subdirectory(const cfilesystem* parent, const char* subtscl_filesys_name);
+int tscl_filesys_exists(const cfilesystem* directory);
+void tscl_filesys_remove_file(const cfilesystem* directory, const char* filename);
+void tscl_filesys_change_directory(cfilesystem* directory, const char* new_path);
 
 #ifdef __cplusplus
 }

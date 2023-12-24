@@ -37,22 +37,38 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_PLATFORM_H
+#define TSCL_PLATFORM_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+#include <stdint.h>
+
+// Structure to hold information about the operating system
+typedef struct {
+    char* name;
+    char* version;
+} cos_info;
+
+// Structure to hold information about the CPU architecture
+typedef struct {
+    char* name;
+    char* architecture;
+} carch_info;
+
+// =================================================================
+// Avalable functions
+// =================================================================
+cos_info tscl_platform_get_os_info(void);
+carch_info tscl_platform_get_architecture_info(void);
+int tscl_platform_is_little_endian(void);
+int tscl_platform_is_big_endian(void);
+uint16_t tscl_platform_swap_endian_16(uint16_t value);
+uint32_t tscl_platform_swap_endian_32(uint32_t value);
+uint64_t tscl_platform_swap_endian_64(uint64_t value);
 
 #ifdef __cplusplus
 }

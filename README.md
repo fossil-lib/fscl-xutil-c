@@ -2,20 +2,6 @@
 
 The TSCL Utility is a powerful toolkit designed to enhance the development process by providing essential libraries for error handling, random seed generation, command execution, and filesystem manipulation. Crafted with precision and efficiency in mind, these libraries empower developers to create robust and error-resilient applications with ease.
 
-1. **Error Handling Library:**
-   TSCL's Error Handling Library simplifies the complex task of managing errors in your code. With intuitive functions and comprehensive error reporting, developers can easily identify, handle, and log errors, ensuring a smoother debugging process and increased code reliability.
-
-2. **Random Seed Generator:**
-   Enhance the randomness in your applications with the Random Seed Generator. This library allows developers to generate and manage random seeds, crucial for applications requiring unpredictable outcomes, such as simulations, games, and cryptographic systems.
-
-3. **Command Execution Module:**
-   Execute system commands seamlessly with TSCL's Command Execution Module. This library provides a secure and efficient way to integrate command-line operations into your applications, facilitating interactions with the underlying system and external processes.
-
-4. **Filesystem Manipulation Tools:**
-   Simplify file and directory operations using TSCL's Filesystem Manipulation Tools. Whether you're reading, writing, or managing files, this library streamlines common filesystem tasks, improving overall file handling efficiency and code readability.
-
-Incorporate the TSCL Utility into your development workflow to experience enhanced productivity and code quality. Whether you're a seasoned developer or just starting, these libraries provide a solid foundation for creating reliable, scalable, and maintainable software applications. Elevate your coding experience with TSCL Utility – where efficiency meets simplicity.
-
 ## Who is This For?
 
 This guide is designed for developers of all skill levels who want to use the Meson build system for their projects. It assumes basic familiarity with command-line interfaces and project organization.
@@ -35,18 +21,18 @@ Before getting started, make sure you have the following installed:
 
 1. **Create a Wrap File**:
 
-Create a directory named subprojects in the root directory, next create a file named `tscl-x<name>-c.wrap` in the `subprojects` directory of your project with the following content:
+Create a directory named subprojects in the root directory, next create a file named `tscl-xutil-c.wrap` in the `subprojects` directory of your project with the following content:
 
    ```bash
    # ================ #
    #  TSCL Wrap File. #
    # ================ #
    [wrap-git]
-   url = https://github.com/trilobite-stdlib/tscl-<name>-c.git
+   url = https://github.com/trilobite-stdlib/tscl-xutil-c.git
    revision = main
    
    [provide]
-   tscl-x<name>-c = tscl_x<name>_c_dep
+   tscl-xutil-c = tscl_xutil_c_dep
    ```
 
 2. **Integrate Wrap File in Meson Build**:
@@ -56,7 +42,7 @@ Create a directory named subprojects in the root directory, next create a file n
        default_options : ['warning_level=3'])
 
    exe = executable('my_project', 'my_project.c',
-       dependencies : dependency('tscl-x<name>-c'), # add this line
+       dependencies : dependency('tscl-xutil-c'), # add this line
        install : true)
 
    test('basic', exe)
@@ -72,26 +58,25 @@ Create a directory named subprojects in the root directory, next create a file n
 
 Here is the link to the [Refrence Docs](https://trilobite.home.blog/reference-docs/)
 
-## Including the Demo and Running Tests
+## Running Tests
 
-To include the demo and run tests, you can use the following options when configuring the build:
+To include the run tests, you can use the following option when configuring the build:
 
-- **Including the Demo**: Add `-Dwith_demo=enabled` when configuring the build.
 - **Running Tests**: Add `-Dwith_test=enabled` when configuring the build.
 
 Example:
 
 ```bash
-meson setup builddir -Dwith_demo=enabled -Dwith_test=enabled
+meson setup builddir -Dwith_test=enabled
 ```
 
 ## Contributing
 
-If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/dreamer-coding-555/meson-lib-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
+If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
 
 ## Feedback and Support
 
-If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/dreamer-coding-555/meson-lib-c/issues).
+If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c/issues).
 
 ## License
 

@@ -50,69 +50,15 @@ extern "C"
 // Define a typedef for char* to make the code more readable
 typedef char* ccommand;
 
-/**
- * @brief Run a system command.
- *
- * This function executes a system command using the system() function.
- *
- * @param process The command to be executed.
- * @return The exit status of the executed command.
- */
-int command(ccommand process);
-
-/**
- * @brief Check if a system command executed successfully.
- *
- * This function checks if a system command executed successfully based on its exit status.
- *
- * @param process The command to be executed.
- * @return 0 if the command executed successfully, -1 otherwise.
- */
-int command_success(ccommand process);
-
-/**
- * @brief Get the output of a system command.
- *
- * This function executes a system command and captures its output into the provided buffer.
- *
- * @param process The command to be executed.
- * @param output Buffer to store the command output.
- * @param output_size Size of the output buffer.
- * @return The exit status of the executed command.
- */
-int command_output(ccommand process, char *output, size_t output_size);
-
-/**
- * @brief Check if a system command exists and is executable.
- *
- * This function checks if a system command exists and is executable by attempting to execute it.
- *
- * @param process The command to be checked.
- * @return 1 if the command exists and is executable, 0 otherwise.
- */
-int command_exists(ccommand process);
-
-/**
- * @brief Check if a directory exists.
- *
- * This function checks if a directory exists based on its path.
- *
- * @param path The path of the directory to be checked.
- * @return 1 if the directory exists, 0 otherwise.
- */
-int command_erase_exists(ccommand path);
-
-/**
- * @brief Concatenate strings safely for system commands.
- *
- * This function safely concatenates a source string to a destination string, ensuring no buffer overflow.
- * It is specifically designed for constructing system commands.
- *
- * @param dest Destination string.
- * @param src Source string to be concatenated.
- * @param dest_size Size of the destination buffer.
- */
-void command_strcat_safe(char *dest, const char *src, size_t dest_size);
+// =================================================================
+// Avalable functions
+// =================================================================
+int tscl_command(ccommand process);
+int tscl_command_success(ccommand process);
+int tscl_command_output(ccommand process, char *output, size_t output_size);
+int tscl_command_exists(ccommand process);
+int tscl_command_erase_exists(ccommand path);
+void tscl_command_strcat_safe(char *dest, const char *src, size_t dest_size);
 
 #ifdef __cplusplus
 }

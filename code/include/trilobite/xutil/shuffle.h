@@ -37,22 +37,26 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_UTIL_H
-#define TSCL_UTIL_H
+#ifndef TSCL_SHUFFLE_H
+#define TSCL_SHUFFLE_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "xutil/filesystem.h"
-#include "xutil/arguments.h"
-#include "xutil/lavalamp.h"
-#include "xutil/platform.h"
-#include "xutil/command.h"
-#include "xutil/shuffle.h"
-#include "xutil/assume.h"
-#include "xutil/ranges.h"
+#include <stdlib.h>
+#include <stdbool.h>
+
+// =================================================================
+// Avalable functions
+// =================================================================
+void tscl_shuffle_seed(unsigned int seed);
+void tscl_shuffle_int(int* array, size_t size);
+void tscl_shuffle_double(double* array, size_t size);
+void tscl_shuffle_cstring(char** array, size_t size);
+void tscl_shuffle_letter(char* array, size_t size);
+void tscl_shuffle_bool(bool* array, size_t size);
 
 #ifdef __cplusplus
 }
