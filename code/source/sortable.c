@@ -104,16 +104,6 @@ void tscl_sortable_bubblesort(csortable *arr, int size) {
     }
 }
 
-// Function to perform merge sort on an array of csortable values
-void tscl_sortable_merge_sort(csortable *arr, int low, int high) {
-    if (low < high) {
-        int mid = low + (high - low) / 2;
-        tscl_sortable_merge_sort(arr, low, mid);
-        tscl_sortable_merge_sort(arr, mid + 1, high);
-        tscl_sortable_merge(arr, low, mid, high);
-    }
-}
-
 // Utility function for merge sort to merge two subarrays
 void tscl_sortable_merge(csortable *arr, int low, int mid, int high) {
     int i, j, k;
@@ -162,6 +152,16 @@ void tscl_sortable_merge(csortable *arr, int low, int mid, int high) {
     // Free temporary arrays
     free(left);
     free(right);
+}
+
+// Function to perform merge sort on an array of csortable values
+void tscl_sortable_merge_sort(csortable *arr, int low, int high) {
+    if (low < high) {
+        int mid = low + (high - low) / 2;
+        tscl_sortable_merge_sort(arr, low, mid);
+        tscl_sortable_merge_sort(arr, mid + 1, high);
+        tscl_sortable_merge(arr, low, mid, high);
+    }
 }
 
 // Function to perform selection sort on an array of csortable values
