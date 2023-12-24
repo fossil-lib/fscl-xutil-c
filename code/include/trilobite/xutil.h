@@ -46,11 +46,9 @@ extern "C"
 #endif
 
 #include "xutil/filesystem.h"
-#include "xutil/searchable.h"
 #include "xutil/arguments.h"
 #include "xutil/lavalamp.h"
 #include "xutil/platform.h"
-#include "xutil/sortable.h"
 #include "xutil/command.h"
 #include "xutil/shuffle.h"
 #include "xutil/assume.h"

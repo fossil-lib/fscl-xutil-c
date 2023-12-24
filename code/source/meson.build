@@ -4,7 +4,6 @@ m_dep = cc.find_library('m', required : false)
 code = files(
     'command.c',    'lavalamp.c',
     'filesystem.c', 'arguments.c',
-    'sortable.c',   'searchable.c',
     'shuffle.c',    'ranges.c',
     'platform.c',   'assume.c',)
 
