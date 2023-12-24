@@ -46,7 +46,6 @@ extern "C"
 #endif
 
 #include <stdbool.h>
-#include <stdio.h>
 
 // =================================================================
 // Avalable functions
