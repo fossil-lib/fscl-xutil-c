@@ -59,7 +59,9 @@ typedef struct {
     const char* architecture;
 } carch_info;
 
-// Function to get information about the operating system
+// =================================================================
+// Avalable functions
+// =================================================================
 cos_info tscl_platform_get_os_info(void);
 carch_info tscl_platform_get_architecture_info(void);
 int tscl_platform_is_little_endian(void);
