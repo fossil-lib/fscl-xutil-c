@@ -37,15 +37,38 @@
 
    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
 */
-#ifndef TSCL_SORTABLE_H
-#define TSCL_SORTABLE_H
+#ifndef tscl_SORTABLE_H
+#define tscl_SORTABLE_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-//
+#include <stdbool.h>
+
+enum {SORTABLE_MAX_CSTR = 100};
+
+// Define the sortable union type
+typedef union {
+    char cstring[SORTABLE_MAX_CSTR];
+    char character;
+    int integer;
+    bool boolean;
+    float floating_point;
+} csortable;
+
+// =================================================================
+// Avalable functions
+// =================================================================
+int tscl_sortable_compare(const csortable *a, const csortable *b);
+void tscl_sortable_insertion_sort(csortable *arr, int size);
+void tscl_sortable_quicksort(csortable *arr, int low, int high);
+void tscl_sortable_bubblesort(csortable *arr, int size);
+void tscl_sortable_merge_sort(csortable *arr, int low, int high);
+void tscl_sortable_selection_sort(csortable *arr, int size);
+void tscl_sortable_auto(csortable *arr, int size);
+void tscl_sortable_console_out(const csortable *arr, int size);
 
 #ifdef __cplusplus
 }

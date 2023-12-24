@@ -45,7 +45,29 @@ extern "C"
 {
 #endif
 
-//
+#include <stdbool.h>
+
+enum {SEARCHABLE_MAX_CSTR = 100};
+
+// Define the searchable union type
+typedef union {
+    int integer;
+    float floating_point;
+    char character;
+    bool boolean;
+    char cstring[SEARCHABLE_MAX_CSTR];  // Assuming a maximum length of 100 characters, adjust as needed
+} csearchable;
+
+// =================================================================
+// Avalable functions
+// =================================================================
+int tscl_searchable_linear_search(const csearchable *arr, int size, const csearchable *key);
+int tscl_searchable_binary_search(const csearchable *arr, int size, const csearchable *key);
+int tscl_searchable_string_search(const csearchable *arr, int size, const csearchable *key);
+int tscl_searchable_interpolation_search(const csearchable *arr, int size, const csearchable *key);
+int tscl_searchable_jump_search(const csearchable *arr, int size, const csearchable *key);
+int tscl_searchable_compare(const csearchable *a, const csearchable *b);
+int tscl_searchable_auto(const csearchable *arr, int size, const csearchable *key);
 
 #ifdef __cplusplus
 }
