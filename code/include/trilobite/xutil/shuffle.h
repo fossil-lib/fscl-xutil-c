@@ -45,7 +45,18 @@ extern "C"
 {
 #endif
 
-//
+#include <stdlib.h>
+#include <stdbool.h>
+
+// =================================================================
+// Avalable functions
+// =================================================================
+void tscl_shuffle_seed(unsigned int seed);
+void tscl_shuffle_int(int* array, size_t size);
+void tscl_shuffle_double(double* array, size_t size);
+void tscl_shuffle_cstring(char** array, size_t size);
+void tscl_shuffle_letter(char* array, size_t size);
+void tscl_shuffle_bool(bool* array, size_t size);
 
 #ifdef __cplusplus
 }

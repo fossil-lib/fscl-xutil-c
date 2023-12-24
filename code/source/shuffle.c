@@ -30,3 +30,72 @@
     ----------------------------------------------------------------------------
 */
 #include "trilobite/xutil/shuffle.h"
+#include "trilobite/xutil/lavalamp.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void tscl_shuffle_seed(unsigned int seed) {
+    tscl_lava_seed(seed);
+}
+
+// Function to shuffle an array of integers
+void tscl_shuffle_int(int* array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+
+        // Swap array[i] and array[j]
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// Function to shuffle an array of doubles
+void tscl_shuffle_double(double* array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+
+        // Swap array[i] and array[j]
+        double temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// Function to shuffle an array of C strings
+void tscl_shuffle_cstring(char** array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+
+        // Swap array[i] and array[j]
+        char* temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// Function to shuffle an array of letters (char)
+void tscl_shuffle_letter(char* array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+
+        // Swap array[i] and array[j]
+        char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// Function to shuffle an array of boolean values
+void tscl_shuffle_bool(bool* array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+
+        // Swap array[i] and array[j]
+        bool temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
