@@ -54,7 +54,9 @@ XTEST_CASE(test_sorting_algorithms_char) {
     int size = sizeof(arr) / sizeof(arr[0]);
 
     tscl_sortable_auto(arr, size);
-    TEST_ASSERT_EQUAL_CHAR_ARRAY((char []){'a', 'b', 'e', 'h', 'i'}, (char *)arr, size);
+    
+    // Use the updated macro for string array comparison
+    TEST_ASSERT_EQUAL_STRING_ARRAY((const char *[]){"a", "b", "e", "h", "i"}, (const char **)arr, size);
 }
 
 //
