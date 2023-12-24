@@ -34,6 +34,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Utility function to swap two tscl_sortable values
+void tscl_sortable_swap(csortable *a, csortable *b) {
+    csortable temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 // Function to compare two csortable values
 int tscl_sortable_compare(const csortable *a, const csortable *b) {
     // Implement your comparison logic based on the data type
