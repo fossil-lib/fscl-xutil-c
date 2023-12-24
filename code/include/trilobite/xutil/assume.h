@@ -51,52 +51,14 @@ extern "C"
 // =================================================================
 // Avalable functions
 // =================================================================
-bool tscl_assume(bool condition, const char* error_message);
-bool tscl_assume_not_null(const void* pointer, const char* error_message);
-bool tscl_assume_within_bounds(size_t index, size_t size, const char* error_message);
-bool tscl_assume_warn(bool condition, const char* warning_message);
-bool tscl_assume_not_null_warn(const void* pointer, const char* warning_message);
-bool tscl_assume_within_bounds_warn(size_t index, size_t size, const char* warning_message);
-bool tscl_assume_positive(int value, const char* error_message);
-bool tscl_assume_non_negative(int value, const char* error_message);
-bool tscl_assume_negative(int value, const char* error_message);
-bool tscl_assume_finite(double value, const char* error_message);
-bool tscl_assume_not_nan(double value, const char* error_message);
-bool tscl_assume_digit(char c, const char* error_message);
-bool tscl_assume_uppercase(char c, const char* error_message);
-bool tscl_assume_lowercase(char c, const char* error_message);
-bool tscl_assume_not_empty_string(const char* str, const char* error_message);
-bool tscl_assume_aligned(const void* ptr, size_t alignment, const char* error_message);
-bool tscl_assume_file_not_null(FILE* file, const char* error_message);
-bool tscl_assume_file_open(FILE* file, const char* error_message);
-bool tscl_assume_file_at_end(FILE* file, const char* error_message);
-bool tscl_assume_not_empty_array(const void* array, size_t size, const char* error_message);
-bool tscl_assume_not_dangling(const void* ptr, size_t size, const char* error_message);
-bool tscl_assume_not_freed(const void* ptr, const char* error_message);
-bool tscl_assume_within_range(int value, int min, int max, const char* error_message);
-bool tscl_assume_valid_enum(int value, int min_enum, int max_enum, const char* error_message);
-bool tscl_assume_false(bool condition, const char* error_message);
-bool tscl_assume_null(const void* pointer, const char* error_message);
-bool tscl_assume_strings_equal(const char* str1, const char* str2, const char* error_message);
-bool tscl_assume_strings_not_equal(const char* str1, const char* str2, const char* error_message);
-bool tscl_assume_whitespace(char c, const char* error_message);
-bool tscl_assume_within_memory_region(const void* ptr, const void* start, size_t size, const char* error_message);
-bool tscl_assume_valid_c_string(const char* str, const char* error_message);
-bool tscl_assume_file_not_at_end(FILE* file, const char* error_message);
-bool tscl_assume_power_of_two(size_t value, const char* error_message);
-bool tscl_assume_ascii_char(char c, const char* error_message);
-bool tscl_assume_writable_memory(const void* ptr, size_t size, const char* error_message);
-bool tscl_assume_not_zero(int value, const char* error_message);
-bool tscl_assume_even(int value, const char* error_message);
-bool tscl_assume_odd(int value, const char* error_message);
-bool tscl_assume_file_at_beginning(FILE* file, const char* error_message);
-bool tscl_assume_string_length_less_than(const char* str, size_t max_length, const char* error_message);
-bool tscl_assume_writable_memory(const void* ptr, size_t size, const char* error_message);
-bool tscl_assume_positive_power_of_two(size_t value, const char* error_message);
-bool tscl_assume_string_length_greater_than(const char* str, size_t min_length, const char* error_message);
-bool tscl_assume_valid_ascii_string(const char* str, const char* error_message);
-bool tscl_assume_string_length_within_range(const char* str, size_t min_length, size_t max_length, const char* error_message);
-bool tscl_assume_writable_memory(const void* ptr, size_t size, const char* error_message);
+bool tscl_assume(bool condition, const char *message);
+bool tscl_assume_this(bool condition);
+bool tscl_assume_this_and_that(bool condition1, bool condition2);
+bool tscl_assume_this_or_that(bool condition1, bool condition2);
+bool tscl_assume_this_unless(bool condition1, bool condition2);
+bool tscl_assume_this_not_that(bool condition1, bool condition2);
+bool tscl_assume_range(int value, int min, int max);
+bool tscl_assume_not_cnullptr(const void *ptr);
 
 #ifdef __cplusplus
 }
