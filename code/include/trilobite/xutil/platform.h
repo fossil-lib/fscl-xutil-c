@@ -45,7 +45,28 @@ extern "C"
 {
 #endif
 
-//
+#include <stdint.h>
+
+// Structure to hold information about the operating system
+typedef struct {
+    const char* name;
+    const char* version;
+} cos_info;
+
+// Structure to hold information about the CPU architecture
+typedef struct {
+    const char* name;
+    const char* architecture;
+} carch_info;
+
+// Function to get information about the operating system
+cos_info tscl_platform_get_os_info(void);
+carch_info tscl_platform_get_architecture_info(void);
+int tscl_platform_is_little_endian(void);
+int tscl_platform_is_big_endian(void);
+uint16_t tscl_platform_swap_endian_16(uint16_t value);
+uint32_t tscl_platform_swap_endian_32(uint32_t value);
+uint64_t tscl_platform_swap_endian_64(uint64_t value);
 
 #ifdef __cplusplus
 }
