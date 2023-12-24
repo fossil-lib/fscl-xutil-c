@@ -32,6 +32,7 @@
 #include "trilobite/xutil/searchable.h"
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 // Function to perform linear search on an array of csearchable values
 int tscl_searchable_linear_search(const csearchable *arr, int size, const csearchable *key) {

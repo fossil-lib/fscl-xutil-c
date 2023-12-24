@@ -33,6 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 // Utility function to swap two tscl_sortable values
 void tscl_sortable_swap(csortable *a, csortable *b) {

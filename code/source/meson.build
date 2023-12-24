@@ -1,3 +1,6 @@
+cc = meson.get_compiler('c')
+m_dep = cc.find_library('m', required : false)
+
 code = files(
     'command.c',    'lavalamp.c',
     'filesystem.c', 'arguments.c',
@@ -7,6 +10,7 @@ code = files(
 
 lib = static_library('tscl-xutil-c',
     code,
+    dependencies: m_dep,
     include_directories: dir)
 
 tscl_xutil_c_dep = declare_dependency(

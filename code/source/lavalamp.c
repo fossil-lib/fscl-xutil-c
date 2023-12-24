@@ -33,6 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 // Function to capture the state of a virtual lava lamp
 void tscl_lava_capture_state(clavalamp* lamp) {
