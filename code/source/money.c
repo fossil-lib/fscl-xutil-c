@@ -34,7 +34,7 @@
 #include <math.h>
 
 // Function to create a money object
-cmoney money_create(dollars_type dollars, cents_type cents, Currency currency) {
+cmoney tscl_money_create(dollars_type dollars, cents_type cents, Currency currency) {
     cmoney result;
     result.dollars = dollars;
     result.cents = cents;
@@ -43,7 +43,7 @@ cmoney money_create(dollars_type dollars, cents_type cents, Currency currency) {
 } // end of func
 
 // Function to add two money objects if they have the same currency
-cmoney money_add(cmoney m1, cmoney m2) {
+cmoney tscl_money_add(cmoney m1, cmoney m2) {
     cmoney result;
 
     // Check if the currencies match
@@ -69,7 +69,7 @@ cmoney money_add(cmoney m1, cmoney m2) {
 } // end of func
 
 // Function to convert money to a different currency
-cmoney money_convert(cmoney source, Currency target_currency) {
+cmoney tscl_money_convert(cmoney source, Currency target_currency) {
     // Assume a simple conversion rate of 1:1 for demonstration purposes
     cmoney result;
     result.dollars = source.dollars;
@@ -80,7 +80,7 @@ cmoney money_convert(cmoney source, Currency target_currency) {
 } // end of func
 
 // Function to display a money object
-void money_display(cmoney m) {
+void tscl_money_display(cmoney m) {
     const char* currency_symbol;
 
     switch (m.currency) {
@@ -109,11 +109,11 @@ void money_display(cmoney m) {
     printf("%s%d.%02d\n", currency_symbol, m.dollars, m.cents);
 } // end of func
 
-int money_is_valid(cmoney m) {
+int tscl_money_is_valid(cmoney m) {
     return (m.cents >= 0 && m.cents <= 99);
 } // end of func
 
-int money_compare(cmoney m1, cmoney m2) {
+int tscl_money_compare(cmoney m1, cmoney m2) {
     if (m1.currency == m2.currency) {
         if (m1.dollars == m2.dollars && m1.cents == m2.cents) {
             return 0; // Equal
@@ -128,7 +128,7 @@ int money_compare(cmoney m1, cmoney m2) {
     }
 } // end of func
 
-cmoney money_subtract(cmoney m1, cmoney m2) {
+cmoney tscl_money_subtract(cmoney m1, cmoney m2) {
     cmoney result;
     
     // Check if the currencies match
@@ -154,7 +154,7 @@ cmoney money_subtract(cmoney m1, cmoney m2) {
 } // end of func
 
 // Function to multiply a cmoney object by a scalar value
-cmoney money_multiply_scalar(cmoney m, int scalar) {
+cmoney tscl_money_multiply_scalar(cmoney m, int scalar) {
     cmoney result = m;
     result.dollars *= scalar;
     result.cents *= scalar;
@@ -167,7 +167,7 @@ cmoney money_multiply_scalar(cmoney m, int scalar) {
 } // end of func
 
 // Function to divide a cmoney object by a scalar value
-cmoney money_divide_scalar(cmoney m, int divisor) {
+cmoney tscl_money_divide_scalar(cmoney m, int divisor) {
     if (divisor == 0) {
         // Division by zero, return original cmoney object
         return m;
@@ -181,7 +181,7 @@ cmoney money_divide_scalar(cmoney m, int divisor) {
 } // end of func
 
 // Function to round the amount in a cmoney object to the nearest integer
-cmoney money_round(cmoney m) {
+cmoney tscl_money_round(cmoney m) {
     cmoney result = m;
 
     // Round the amount to the nearest integer
@@ -195,16 +195,16 @@ cmoney money_round(cmoney m) {
 } // end of func
 
 // Function to check if a cmoney object represents a positive amount
-int money_is_positive(cmoney m) {
+int tscl_money_is_positive(cmoney m) {
     return (m.dollars > 0) || (m.dollars == 0 && m.cents > 0);
 } // end of func
 
 // Function to check if a cmoney object represents a negative amount
-int money_is_negative(cmoney m) {
+int tscl_money_is_negative(cmoney m) {
     return (m.dollars < 0) || (m.dollars == 0 && m.cents < 0);
 } // end of func
 
 // Function to check if a cmoney object represents zero amount
-int money_is_zero(cmoney m) {
+int tscl_money_is_zero(cmoney m) {
     return (m.dollars == 0) && (m.cents == 0);
 } // end of func
