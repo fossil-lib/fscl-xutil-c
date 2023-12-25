@@ -51,6 +51,7 @@ extern "C"
 #include "xutil/platform.h"
 #include "xutil/command.h"
 #include "xutil/shuffle.h"
+#include "xutil/bitwise.h"
 #include "xutil/assume.h"
 #include "xutil/ranges.h"
 
