@@ -65,131 +65,22 @@ typedef struct {
     Currency currency;
 } cmoney;
 
-/**
- * @brief Initializes a cmoney object with the provided values.
- *
- * @param dollars The amount in dollars.
- * @param cents   The amount in cents (0 to 99).
- * @param currency The currency of the money object (e.g., USD, CAD, GBP).
- *
- * @return A cmoney object initialized with the provided values.
- */
-cmoney money_create(dollars_type dollars, cents_type cents, Currency currency);
-
-/**
- * @brief Adds two cmoney objects if they have the same currency.
- *
- * @param m1 The first cmoney object.
- * @param m2 The second cmoney object.
- *
- * @return The sum of the two cmoney objects, or a cmoney object with unknown currency if currencies don't match.
- */
-cmoney money_add(cmoney m1, cmoney m2);
-
-/**
- * @brief Converts a cmoney object to a different currency.
- *
- * @param source         The source cmoney object.
- * @param target_currency The target currency to convert to.
- *
- * @return The converted cmoney object.
- */
-cmoney money_convert(cmoney source, Currency target_currency);
-
-/**
- * @brief Displays the details of a cmoney object.
- *
- * @param m The cmoney object to be displayed.
- */
-void money_display(cmoney m);
-
-/**
- * @brief Checks if a cmoney object is valid (cents within the range 0 to 99).
- *
- * @param m The cmoney object to be validated.
- *
- * @return 1 if the cmoney object is valid, 0 otherwise.
- */
-int money_is_valid(cmoney m);
-
-/**
- * @brief Compares two cmoney objects.
- *
- * @param m1 The first cmoney object.
- * @param m2 The second cmoney object.
- *
- * @return  0 if the cmoney objects are equal,
- *          1 if m1 is greater than m2,
- *         -1 if m1 is less than m2,
- *         -2 if the currencies are different.
- */
-int money_compare(cmoney m1, cmoney m2);
-
-/**
- * @brief Subtracts one cmoney object from another if they have the same currency.
- *
- * @param m1 The cmoney object to subtract from.
- * @param m2 The cmoney object to subtract.
- *
- * @return The result of subtracting m2 from m1, or a cmoney object with unknown currency if currencies don't match.
- */
-cmoney money_subtract(cmoney m1, cmoney m2);
-
-/**
- * @brief Multiplies a cmoney object by a scalar value.
- *
- * @param m      The cmoney object to be multiplied.
- * @param scalar The scalar value to multiply by.
- *
- * @return The result of multiplying the cmoney object by the scalar value.
- */
-cmoney money_multiply_scalar(cmoney m, int scalar);
-
-/**
- * @brief Divides a cmoney object by a scalar value.
- *
- * @param m      The cmoney object to be divided.
- * @param divisor The scalar value to divide by.
- *
- * @return The result of dividing the cmoney object by the scalar value.
- */
-cmoney money_divide_scalar(cmoney m, int divisor);
-
-/**
- * @brief Rounds the amount in a cmoney object to the nearest integer.
- *
- * @param m The cmoney object to be rounded.
- *
- * @return The cmoney object with the amount rounded to the nearest integer.
- */
-cmoney money_round(cmoney m);
-
-/**
- * @brief Checks if a cmoney object represents a positive amount.
- *
- * @param m The cmoney object to be checked.
- *
- * @return 1 if the amount is positive, 0 otherwise.
- */
-int money_is_positive(cmoney m);
-
-/**
- * @brief Checks if a cmoney object represents a negative amount.
- *
- * @param m The cmoney object to be checked.
- *
- * @return 1 if the amount is negative, 0 otherwise.
- */
-int money_is_negative(cmoney m);
-
-/**
- * @brief Checks if a cmoney object represents zero amount.
- *
- * @param m The cmoney object to be checked.
- *
- * @return 1 if the amount is zero, 0 otherwise.
- */
-int money_is_zero(cmoney m);
+// =================================================================
+// Avalable functions
+// =================================================================
+cmoney tscl_money_create(dollars_type dollars, cents_type cents, Currency currency);
+cmoney tscl_money_add(cmoney m1, cmoney m2);
+cmoney tscl_money_convert(cmoney source, Currency target_currency);
+void tscl_money_display(cmoney m);
+int tscl_money_is_valid(cmoney m);
+int tscl_money_compare(cmoney m1, cmoney m2);
+cmoney tscl_money_subtract(cmoney m1, cmoney m2);
+cmoney tscl_money_multiply_scalar(cmoney m, int scalar);
+cmoney tscl_money_divide_scalar(cmoney m, int divisor);
+cmoney tscl_money_round(cmoney m);
+int tscl_money_is_positive(cmoney m);
+int tscl_money_is_negative(cmoney m);
+int tscl_money_is_zero(cmoney m);
 
 #ifdef __cplusplus
 }
