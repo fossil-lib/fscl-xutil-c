@@ -55,6 +55,7 @@ extern "C"
 #include "xutil/bitwise.h"
 #include "xutil/assume.h"
 #include "xutil/ranges.h"
+#include "xutil/money.h"
 
 #ifdef __cplusplus
 }
