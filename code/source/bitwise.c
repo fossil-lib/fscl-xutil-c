@@ -29,7 +29,7 @@
     (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
     ----------------------------------------------------------------------------
 */
-#include "trilobite/xmemory/bitwise.h"
+#include "trilobite/xutil/bitwise.h"
 #include <stdio.h>
 
 bitwise tscl_binary_reverse_bits(bitwise a) {
