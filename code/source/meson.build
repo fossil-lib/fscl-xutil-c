@@ -5,7 +5,8 @@ code = files(
     'command.c',    'lavalamp.c',
     'filesystem.c', 'arguments.c',
     'shuffle.c',    'ranges.c',
-    'platform.c',   'assume.c',)
+    'platform.c',   'assume.c',
+    'bitwise.c')
 
 lib = static_library('tscl-xutil-c',
     code,
