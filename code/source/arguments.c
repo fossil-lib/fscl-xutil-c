@@ -1,41 +1,22 @@
-/*  ----------------------------------------------------------------------------
-    File: parser.c
-
-    Description:
-    This source file contains the code entry point for the Trilobite Stdlib project.
-    It demonstrates the usage of various utilities and functions provided by the
-    Trilobite Stdlib to enhance software development.
-
-    Author: Michael Gene Brockus (Dreamer)
-    Email: michaelbrockus@gmail.com
-    Website: [Trilobite Coder Blog](https://trilobite.home.blog)
-
-    Project: Trilobite Stdlib
-
-    License: Apache License 2.0
-    SPDX Identifier: Apache-2.0
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
-
-    Unless required by applicable law or agreed to in writing, software distributed under the License
-    is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-    or implied. See the License for the specific language governing permissions and limitations
-    under the License.
-
-    Please review the full text of the Apache License 2.0 for the complete terms and conditions.
-
-    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
-    ----------------------------------------------------------------------------
+/*
+==============================================================================
+Author: Michael Gene Brockus (Dreamer)
+Email: michaelbrockus@gmail.com
+Organization: Fossil Logic
+Description: 
+    This file is part of the Fossil Logic project, where innovation meets
+    excellence in software development. Michael Gene Brockus, also known as
+    "Dreamer," is a dedicated contributor to this project. For any inquiries,
+    feel free to contact Michael at michaelbrockus@gmail.com.
+==============================================================================
 */
-#include "trilobite/xutil/arguments.h"
+#include "fossil/xutil/arguments.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 // Function to display usage information
-void tscl_arg_parse_usage(const char* program_name, coption* options, int num_options) {
+void fscl_arg_parse_usage(const char* program_name, coption* options, int num_options) {
     printf("Usage: %s [options]\n\nOptions:\n", program_name);
     for (int i = 0; i < num_options; ++i) {
         printf("  -%s", options[i].name);
@@ -64,7 +45,7 @@ void tscl_arg_parse_usage(const char* program_name, coption* options, int num_op
 }
 
 // Function to check if an option has been parsed
-int tscl_arg_parse_has(coption* options, int num_options, const char* option_name) {
+int fscl_arg_parse_has(coption* options, int num_options, const char* option_name) {
     for (int i = 0; i < num_options; ++i) {
         if (strcmp(option_name, options[i].name) == 0 && options[i].parsed) {
             return 1; // Option has been parsed
@@ -74,7 +55,7 @@ int tscl_arg_parse_has(coption* options, int num_options, const char* option_nam
 }
 
 // Function to parse command line arguments
-void tscl_arg_parse(ccommandline* cmd, coption* options, int num_options) {
+void fscl_arg_parse(ccommandline* cmd, coption* options, int num_options) {
     for (int i = 1; i < cmd->argc; ++i) {
         const char* arg = cmd->argv[i];
         if (arg[0] == '-') {
@@ -124,7 +105,7 @@ void tscl_arg_parse(ccommandline* cmd, coption* options, int num_options) {
     }
 }
 
-void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options) {
+void fscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options) {
     for (int i = 1; i < cmd->argc; ++i) {
         const char* arg = cmd->argv[i];
         if (arg[0] == '-') {
@@ -143,20 +124,20 @@ void tscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_op
     }
 }
 
-void tscl_arg_print_parsed_options(coption* options, int num_options) {
+void fscl_arg_print_parsed_options(coption* options, int num_options) {
     for (int i = 0; i < num_options; ++i) {
         printf("Option: %s, Parsed: %s\n", options[i].name, options[i].parsed ? "true" : "false");
     }
 }
 
-void tscl_arg_reset_parsed_flags(coption* options, int num_options) {
+void fscl_arg_reset_parsed_flags(coption* options, int num_options) {
     for (int i = 0; i < num_options; ++i) {
         options[i].parsed = 0;
     }
 }
 
 // Function to create combo choices
-combo_choice* tscl_arg_create_combo_choices(const char* names[], const int values[], int num_choices) {
+combo_choice* fscl_arg_create_combo_choices(const char* names[], const int values[], int num_choices) {
     combo_choice* choices = malloc(num_choices * sizeof(combo_choice));
     if (!choices) {
         fprintf(stderr, "Memory allocation error for combo choices.\n");
@@ -172,7 +153,7 @@ combo_choice* tscl_arg_create_combo_choices(const char* names[], const int value
 }
 
 // Function to create options
-coption* tscl_arg_create_options(const char* names[], coption_type types[], coption_value values[], void* extra_data[], int num_options) {
+coption* fscl_arg_create_options(const char* names[], coption_type types[], coption_value values[], void* extra_data[], int num_options) {
     coption* options = malloc(num_options * sizeof(coption));
     if (!options) {
         fprintf(stderr, "Memory allocation error for options.\n");

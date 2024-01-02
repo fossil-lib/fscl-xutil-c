@@ -1,40 +1,21 @@
-/*  ----------------------------------------------------------------------------
-    File: money.c
-
-    Description:
-    This source file contains the code entry point for the Trilobite Stdlib project.
-    It demonstrates the usage of various utilities and functions provided by the
-    Trilobite Stdlib to enhance software development.
-
-    Author: Michael Gene Brockus (Dreamer)
-    Email: michaelbrockus@gmail.com
-    Website: [Trilobite Coder Blog](https://trilobite.home.blog)
-
-    Project: Trilobite Stdlib
-
-    License: Apache License 2.0
-    SPDX Identifier: Apache-2.0
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
-
-    Unless required by applicable law or agreed to in writing, software distributed under the License
-    is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-    or implied. See the License for the specific language governing permissions and limitations
-    under the License.
-
-    Please review the full text of the Apache License 2.0 for the complete terms and conditions.
-
-    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
-    ----------------------------------------------------------------------------
+/*
+==============================================================================
+Author: Michael Gene Brockus (Dreamer)
+Email: michaelbrockus@gmail.com
+Organization: Fossil Logic
+Description: 
+    This file is part of the Fossil Logic project, where innovation meets
+    excellence in software development. Michael Gene Brockus, also known as
+    "Dreamer," is a dedicated contributor to this project. For any inquiries,
+    feel free to contact Michael at michaelbrockus@gmail.com.
+==============================================================================
 */
-#include "trilobite/xutil/money.h"
+#include "fossil/xutil/money.h"
 #include <stdio.h>
 #include <math.h>
 
 // Function to create a money object
-cmoney tscl_money_create(dollars_type dollars, cents_type cents, Currency currency) {
+cmoney fscl_money_create(dollars_type dollars, cents_type cents, Currency currency) {
     cmoney result;
     result.dollars = dollars;
     result.cents = cents;
@@ -43,7 +24,7 @@ cmoney tscl_money_create(dollars_type dollars, cents_type cents, Currency curren
 } // end of func
 
 // Function to add two money objects if they have the same currency
-cmoney tscl_money_add(cmoney m1, cmoney m2) {
+cmoney fscl_money_add(cmoney m1, cmoney m2) {
     cmoney result;
 
     // Check if the currencies match
@@ -69,7 +50,7 @@ cmoney tscl_money_add(cmoney m1, cmoney m2) {
 } // end of func
 
 // Function to convert money to a different currency
-cmoney tscl_money_convert(cmoney source, Currency target_currency) {
+cmoney fscl_money_convert(cmoney source, Currency target_currency) {
     // Assume a simple conversion rate of 1:1 for demonstration purposes
     cmoney result;
     result.dollars = source.dollars;
@@ -80,7 +61,7 @@ cmoney tscl_money_convert(cmoney source, Currency target_currency) {
 } // end of func
 
 // Function to display a money object
-void tscl_money_display(cmoney m) {
+void fscl_money_display(cmoney m) {
     const char* currency_symbol;
 
     switch (m.currency) {
@@ -109,11 +90,11 @@ void tscl_money_display(cmoney m) {
     printf("%s%d.%02d\n", currency_symbol, m.dollars, m.cents);
 } // end of func
 
-int tscl_money_is_valid(cmoney m) {
+int fscl_money_is_valid(cmoney m) {
     return (m.cents >= 0 && m.cents <= 99);
 } // end of func
 
-int tscl_money_compare(cmoney m1, cmoney m2) {
+int fscl_money_compare(cmoney m1, cmoney m2) {
     if (m1.currency == m2.currency) {
         if (m1.dollars == m2.dollars && m1.cents == m2.cents) {
             return 0; // Equal
@@ -128,7 +109,7 @@ int tscl_money_compare(cmoney m1, cmoney m2) {
     }
 } // end of func
 
-cmoney tscl_money_subtract(cmoney m1, cmoney m2) {
+cmoney fscl_money_subtract(cmoney m1, cmoney m2) {
     cmoney result;
     
     // Check if the currencies match
@@ -154,7 +135,7 @@ cmoney tscl_money_subtract(cmoney m1, cmoney m2) {
 } // end of func
 
 // Function to multiply a cmoney object by a scalar value
-cmoney tscl_money_multiply_scalar(cmoney m, int scalar) {
+cmoney fscl_money_multiply_scalar(cmoney m, int scalar) {
     cmoney result = m;
     result.dollars *= scalar;
     result.cents *= scalar;
@@ -167,7 +148,7 @@ cmoney tscl_money_multiply_scalar(cmoney m, int scalar) {
 } // end of func
 
 // Function to divide a cmoney object by a scalar value
-cmoney tscl_money_divide_scalar(cmoney m, int divisor) {
+cmoney fscl_money_divide_scalar(cmoney m, int divisor) {
     if (divisor == 0) {
         // Division by zero, return original cmoney object
         return m;
@@ -181,7 +162,7 @@ cmoney tscl_money_divide_scalar(cmoney m, int divisor) {
 } // end of func
 
 // Function to round the amount in a cmoney object to the nearest integer
-cmoney tscl_money_round(cmoney m) {
+cmoney fscl_money_round(cmoney m) {
     cmoney result = m;
 
     // Round the amount to the nearest integer
@@ -195,16 +176,16 @@ cmoney tscl_money_round(cmoney m) {
 } // end of func
 
 // Function to check if a cmoney object represents a positive amount
-int tscl_money_is_positive(cmoney m) {
+int fscl_money_is_positive(cmoney m) {
     return (m.dollars > 0) || (m.dollars == 0 && m.cents > 0);
 } // end of func
 
 // Function to check if a cmoney object represents a negative amount
-int tscl_money_is_negative(cmoney m) {
+int fscl_money_is_negative(cmoney m) {
     return (m.dollars < 0) || (m.dollars == 0 && m.cents < 0);
 } // end of func
 
 // Function to check if a cmoney object represents zero amount
-int tscl_money_is_zero(cmoney m) {
+int fscl_money_is_zero(cmoney m) {
     return (m.dollars == 0) && (m.cents == 0);
 } // end of func

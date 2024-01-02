@@ -1,35 +1,16 @@
-/*  ----------------------------------------------------------------------------
-    File: platform.c
-
-    Description:
-    This source file contains the code entry point for the Trilobite Stdlib project.
-    It demonstrates the usage of various utilities and functions provided by the
-    Trilobite Stdlib to enhance software development.
-
-    Author: Michael Gene Brockus (Dreamer)
-    Email: michaelbrockus@gmail.com
-    Website: [Trilobite Coder Blog](https://trilobite.home.blog)
-
-    Project: Trilobite Stdlib
-
-    License: Apache License 2.0
-    SPDX Identifier: Apache-2.0
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
-
-    Unless required by applicable law or agreed to in writing, software distributed under the License
-    is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-    or implied. See the License for the specific language governing permissions and limitations
-    under the License.
-
-    Please review the full text of the Apache License 2.0 for the complete terms and conditions.
-
-    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
-    ----------------------------------------------------------------------------
+/*
+==============================================================================
+Author: Michael Gene Brockus (Dreamer)
+Email: michaelbrockus@gmail.com
+Organization: Fossil Logic
+Description: 
+    This file is part of the Fossil Logic project, where innovation meets
+    excellence in software development. Michael Gene Brockus, also known as
+    "Dreamer," is a dedicated contributor to this project. For any inquiries,
+    feel free to contact Michael at michaelbrockus@gmail.com.
+==============================================================================
 */
-#include "trilobite/xutil/platform.h"
+#include "fossil/xutil/platform.h"
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
@@ -49,7 +30,7 @@
 #endif
 
 // Function to get information about the operating system
-cos_info tscl_platform_get_os_info(void) {
+cos_info fscl_platform_get_os_info(void) {
     cos_info info;
 
     #if defined(_WIN32)
@@ -161,7 +142,7 @@ cos_info tscl_platform_get_os_info(void) {
 }
 
 // Function to get information about the CPU architecture
-carch_info tscl_platform_get_architecture_info(void) {
+carch_info fscl_platform_get_architecture_info(void) {
     carch_info info;
 
     #if defined(__i386__)
@@ -183,28 +164,28 @@ carch_info tscl_platform_get_architecture_info(void) {
 }
 
 // Function to check if the system is little-endian
-int tscl_platform_is_little_endian(void) {
+int fscl_platform_is_little_endian(void) {
     uint16_t num = 1;
     return *((uint8_t*)&num) == 1;
 }
 
 // Function to check if the system is big-endian
-int tscl_platform_is_big_endian(void) {
-    return !tscl_platform_is_little_endian();
+int fscl_platform_is_big_endian(void) {
+    return !fscl_platform_is_little_endian();
 }
 
 // Function to swap the endianness of a 16-bit integer
-uint16_t tscl_platform_swap_endian_16(uint16_t value) {
+uint16_t fscl_platform_swap_endian_16(uint16_t value) {
     return (value >> 8) | (value << 8);
 }
 
 // Function to swap the endianness of a 32-bit integer
-uint32_t tscl_platform_swap_endian_32(uint32_t value) {
+uint32_t fscl_platform_swap_endian_32(uint32_t value) {
     return ((value >> 24) & 0xFF) | ((value >> 8) & 0xFF00) | ((value << 8) & 0xFF0000) | ((value << 24) & 0xFF000000);
 }
 
 // Function to swap the endianness of a 64-bit integer
-uint64_t tscl_platform_swap_endian_64(uint64_t value) {
+uint64_t fscl_platform_swap_endian_64(uint64_t value) {
     return ((value >> 56) & 0xFF) | ((value >> 48) & 0xFF00) | ((value >> 40) & 0xFF0000) | ((value >> 32) & 0xFF000000) |
            ((value >> 24) & 0xFF00000000) | ((value >> 16) & 0xFF0000000000) | ((value >> 8) & 0xFF000000000000) | ((value << 56) & 0xFF00000000000000);
 }

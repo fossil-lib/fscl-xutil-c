@@ -1,35 +1,16 @@
-/*  ----------------------------------------------------------------------------
-    File: command.c
-
-    Description:
-    This source file contains the code entry point for the Trilobite Stdlib project.
-    It demonstrates the usage of various utilities and functions provided by the
-    Trilobite Stdlib to enhance software development.
-
-    Author: Michael Gene Brockus (Dreamer)
-    Email: michaelbrockus@gmail.com
-    Website: [Trilobite Coder Blog](https://trilobite.home.blog)
-
-    Project: Trilobite Stdlib
-
-    License: Apache License 2.0
-    SPDX Identifier: Apache-2.0
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
-
-    Unless required by applicable law or agreed to in writing, software distributed under the License
-    is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-    or implied. See the License for the specific language governing permissions and limitations
-    under the License.
-
-    Please review the full text of the Apache License 2.0 for the complete terms and conditions.
-
-    (Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0)
-    ----------------------------------------------------------------------------
+/*
+==============================================================================
+Author: Michael Gene Brockus (Dreamer)
+Email: michaelbrockus@gmail.com
+Organization: Fossil Logic
+Description: 
+    This file is part of the Fossil Logic project, where innovation meets
+    excellence in software development. Michael Gene Brockus, also known as
+    "Dreamer," is a dedicated contributor to this project. For any inquiries,
+    feel free to contact Michael at michaelbrockus@gmail.com.
+==============================================================================
 */
-#include "trilobite/xutil/command.h"
+#include "fossil/xutil/command.h"
 #include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +30,7 @@
 typedef char* ccommand;
 
 // Function to run a command
-int tscl_command(ccommand process) {
+int fscl_command(ccommand process) {
     int result = system(process);
     if (result == -1) {
         perror("Error executing command");
@@ -58,8 +39,8 @@ int tscl_command(ccommand process) {
 } // end of func
 
 // Function to check if the command executed successfully
-int tscl_command_success(ccommand process) {
-    int result = tscl_command(process);
+int fscl_command_success(ccommand process) {
+    int result = fscl_command(process);
     if (result == 0) {
         printf("Command '%s' executed successfully.\n", process);
     } else {
@@ -69,7 +50,7 @@ int tscl_command_success(ccommand process) {
 } // end of func
 
 // Function to get the output of a command
-int tscl_command_output(ccommand process, char *output, size_t output_size) {
+int fscl_command_output(ccommand process, char *output, size_t output_size) {
 #ifdef _WIN32
     FILE *pipe = _popen(process, "r");
     if (!pipe) {
@@ -154,7 +135,7 @@ int tscl_command_output(ccommand process, char *output, size_t output_size) {
 } // end of func
 
 // Function to check if a command exists and is executable
-int tscl_command_exists(ccommand process) {
+int fscl_command_exists(ccommand process) {
 #ifdef _WIN32
     // On Windows, check if the command exists in the system path
     const char* env_path = getenv("PATH");
@@ -188,13 +169,13 @@ int tscl_command_exists(ccommand process) {
 } // end of function
 
 // Function to check if a directory exists
-int tscl_command_erase_exists(ccommand path) {
+int fscl_command_erase_exists(ccommand path) {
     struct stat info;
     return stat(path, &info) == 0 && S_ISDIR(info.st_mode);
 } // end of func
 
 // Function to concatenate strings safely
-void tscl_command_strcat_safe(char *dest, const char *src, size_t dest_size) {
+void fscl_command_strcat_safe(char *dest, const char *src, size_t dest_size) {
     size_t dest_len = strlen(dest);
     size_t src_len = strlen(src);
 
