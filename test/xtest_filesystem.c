@@ -22,7 +22,7 @@ Description:
 // Test case for initializing error with a message
 XTEST_CASE(test_fscl_filesys_create) {
     cfilesystem dir = fscl_filesys_create("path\\to\\directory");
-    TEST_ASSERT_NOT_NULL_PTR(dir.path);
+    TEST_ASSERT_NOT_CNULLPTR(dir.path);
     TEST_ASSERT_TRUE(fscl_filesys_exists(&dir));
     fscl_filesys_erase(&dir);
 }
