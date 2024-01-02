@@ -8,11 +8,11 @@ code = files(
     'platform.c',   'assume.c',
     'bitwise.c')
 
-lib = static_library('tscl-xutil-c',
+lib = static_library('fscl-xutil-c',
     code,
     dependencies: m_dep,
     include_directories: dir)
 
-tscl_xutil_c_dep = declare_dependency(
+fscl_xutil_c_dep = declare_dependency(
     link_with: lib,
     include_directories: dir)
