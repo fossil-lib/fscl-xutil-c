@@ -1,6 +1,8 @@
-# TSCL Utility Libraries - **C**
+# Fossil Utility - **C**
 
-The TSCL Utility is a powerful toolkit designed to enhance the development process by providing essential libraries for error handling, random seed generation, command execution, and filesystem manipulation. Crafted with precision and efficiency in mind, these libraries empower developers to create robust and error-resilient applications with ease.
+Fossil Standard Component Libraries (FSCL) by Fossil Logic represent the pinnacle of software development, embodying our commitment to quality, security, and practicality. These meticulously curated libraries serve as the cornerstone for crafting cutting-edge applications, offering a foundation built on excellence in code. With FSCL, Fossil Logic empowers developers to seamlessly integrate standardized components that elevate the overall performance and reliability of digital solutions, setting a new standard for software excellence.
+
+Elevate the efficiency of your code with Fossil XUtility. This library is a treasure trove of utility functions, offering developers a vast array of tools to simplify complex tasks. From common programming challenges to specialized operations, Fossil XUtility enhances productivity and reduces development time, allowing you to focus on the creativity of your code.
 
 ## Who is This For?
 
@@ -25,14 +27,14 @@ Create a directory named subprojects in the root directory, next create a file n
 
    ```bash
    # ================ #
-   #  TSCL Wrap File. #
+   #  FSCL Wrap File. #
    # ================ #
    [wrap-git]
-   url = https://github.com/trilobite-stdlib/tscl-xutil-c.git
+   url = https://github.com/fossil-lib/fscl-xutil-c.git
    revision = main
    
    [provide]
-   tscl-xutil-c = tscl_xutil_c_dep
+   fscl-xutil-c = fscl_xutil_c_dep
    ```
 
 2. **Integrate Wrap File in Meson Build**:
@@ -42,7 +44,7 @@ Create a directory named subprojects in the root directory, next create a file n
        default_options : ['warning_level=3'])
 
    exe = executable('my_project', 'my_project.c',
-       dependencies : dependency('tscl-xutil-c'), # add this line
+       dependencies : dependency('fscl-xutil-c'), # add this line
        install : true)
 
    test('basic', exe)
@@ -72,11 +74,11 @@ meson setup builddir -Dwith_test=enabled
 
 ## Contributing
 
-If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
+If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/fossil-lib/fscl-xutil-c). Be sure to read the documentation on the [project website](https://trilobite.home.blog).
 
 ## Feedback and Support
 
-If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/trilobite-stdlib/tscl-xutil-c/issues).
+If you encounter any issues, have questions, or would like to provide feedback, don't hesitate to open an issue on the [GitHub repository](https://github.com/fossil-lib/fscl-xutil-c/issues).
 
 ## License
 
