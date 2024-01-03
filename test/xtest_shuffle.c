@@ -74,8 +74,8 @@ XTEST_CASE(test_shuffle_bool) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_shuffle_group) {
-    XTEST_RUN_UNIT(test_shuffle_int,     runner);
-    XTEST_RUN_UNIT(test_shuffle_cstring, runner);
-    XTEST_RUN_UNIT(test_shuffle_letter,  runner);
-    XTEST_RUN_UNIT(test_shuffle_bool,    runner);
+    XTEST_RUN_UNIT(test_shuffle_int);
+    XTEST_RUN_UNIT(test_shuffle_cstring);
+    XTEST_RUN_UNIT(test_shuffle_letter);
+    XTEST_RUN_UNIT(test_shuffle_bool);
 } // end of func
