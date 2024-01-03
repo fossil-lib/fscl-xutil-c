@@ -50,7 +50,7 @@ XTEST_CASE(test_fscl_filesys_create_subdirectory) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_fscl_filesys_group) {
-    XTEST_RUN_UNIT(test_fscl_filesys_create,              runner);
-    XTEST_RUN_UNIT(test_fscl_filesys_list_files,          runner);
-    XTEST_RUN_UNIT(test_fscl_filesys_create_subdirectory, runner);
+    XTEST_RUN_UNIT(test_fscl_filesys_create);
+    XTEST_RUN_UNIT(test_fscl_filesys_list_files);
+    XTEST_RUN_UNIT(test_fscl_filesys_create_subdirectory);
 } // end of function main
