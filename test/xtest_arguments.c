@@ -54,6 +54,6 @@ XTEST_CASE(test_fscl_arg_parse) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_parser_group) {
-    XTEST_RUN_UNIT(test_fscl_arg_parse_has,   runner);
-    XTEST_RUN_UNIT(test_fscl_arg_parse,       runner);
+    XTEST_RUN_UNIT(test_fscl_arg_parse_has);
+    XTEST_RUN_UNIT(test_fscl_arg_parse);
 } // end of function main
