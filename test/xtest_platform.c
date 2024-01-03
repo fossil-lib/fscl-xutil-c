@@ -48,9 +48,9 @@ XTEST_CASE(test_swap_endian_64) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_platform_group) {
-    XTEST_RUN_UNIT(test_is_little_endian, runner);
-    XTEST_RUN_UNIT(test_is_big_endian,  runner);
-    XTEST_RUN_UNIT(test_swap_endian_16, runner);
-    XTEST_RUN_UNIT(test_swap_endian_32, runner);
-    XTEST_RUN_UNIT(test_swap_endian_64, runner);
+    XTEST_RUN_UNIT(test_is_little_endian);
+    XTEST_RUN_UNIT(test_is_big_endian);
+    XTEST_RUN_UNIT(test_swap_endian_16);
+    XTEST_RUN_UNIT(test_swap_endian_32);
+    XTEST_RUN_UNIT(test_swap_endian_64);
 } // end of func
