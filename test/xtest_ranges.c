@@ -86,11 +86,11 @@ XTEST_CASE(test_fscl_crange_expand) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_ranges_group) {
-    XTEST_RUN_UNIT(test_fscl_crange_contains,     runner);
-    XTEST_RUN_UNIT(test_fscl_crange_overlaps,     runner);
-    XTEST_RUN_UNIT(test_fscl_crange_intersection, runner);
-    XTEST_RUN_UNIT(test_fscl_crange_is_subset,    runner);
-    XTEST_RUN_UNIT(test_fscl_crange_is_equal,     runner);
-    XTEST_RUN_UNIT(test_fscl_crange_union,        runner);
-    XTEST_RUN_UNIT(test_fscl_crange_expand,       runner);
+    XTEST_RUN_UNIT(test_fscl_crange_contains);
+    XTEST_RUN_UNIT(test_fscl_crange_overlaps);
+    XTEST_RUN_UNIT(test_fscl_crange_intersection);
+    XTEST_RUN_UNIT(test_fscl_crange_is_subset);
+    XTEST_RUN_UNIT(test_fscl_crange_is_equal);
+    XTEST_RUN_UNIT(test_fscl_crange_union);
+    XTEST_RUN_UNIT(test_fscl_crange_expand);
 } // end of func
