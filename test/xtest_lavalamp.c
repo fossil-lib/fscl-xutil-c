@@ -35,6 +35,6 @@ XTEST_CASE(testLavaRandom) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_random_group) {
-    XTEST_RUN_UNIT(testLavaSeed,   runner);
-    XTEST_RUN_UNIT(testLavaRandom, runner);
+    XTEST_RUN_UNIT(testLavaSeed);
+    XTEST_RUN_UNIT(testLavaRandom);
 } // end of func
