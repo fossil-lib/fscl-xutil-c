@@ -52,11 +52,11 @@ XTEST_CASE(test_fscl_assume_not_cnullptr) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_assume_group) {
-    XTEST_RUN_UNIT(test_fscl_assume_this, runner);
-    XTEST_RUN_UNIT(test_fscl_assume_this_and_that, runner);
-    XTEST_RUN_UNIT(test_fscl_assume_this_or_that,  runner);
-    XTEST_RUN_UNIT(test_fscl_assume_this_unless,   runner);
-    XTEST_RUN_UNIT(test_fscl_assume_this_not_that, runner);
-    XTEST_RUN_UNIT(test_fscl_assume_range,         runner);
-    XTEST_RUN_UNIT(test_fscl_assume_not_cnullptr,  runner);
+    XTEST_RUN_UNIT(test_fscl_assume_this);
+    XTEST_RUN_UNIT(test_fscl_assume_this_and_that);
+    XTEST_RUN_UNIT(test_fscl_assume_this_or_that);
+    XTEST_RUN_UNIT(test_fscl_assume_this_unless);
+    XTEST_RUN_UNIT(test_fscl_assume_this_not_that);
+    XTEST_RUN_UNIT(test_fscl_assume_range);
+    XTEST_RUN_UNIT(test_fscl_assume_not_cnullptr);
 } // end of func
