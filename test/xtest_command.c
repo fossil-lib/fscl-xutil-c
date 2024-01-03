@@ -64,9 +64,9 @@ XTEST_CASE(test_fscl_filesys_exists) {
 // XUNIT-TEST RUNNER
 //
 XTEST_DEFINE_POOL(test_command_group) {
-    XTEST_RUN_UNIT(test_meson_configure,     runner);
-    XTEST_RUN_UNIT(test_ninja_build,         runner);
-    XTEST_RUN_UNIT(test_command_exists,      runner);
-    XTEST_RUN_UNIT(test_command_strcat_safe, runner);
-    XTEST_RUN_UNIT(test_fscl_filesys_exists,    runner);
+    XTEST_RUN_UNIT(test_meson_configure);
+    XTEST_RUN_UNIT(test_ninja_build);
+    XTEST_RUN_UNIT(test_command_exists);
+    XTEST_RUN_UNIT(test_command_strcat_safe);
+    XTEST_RUN_UNIT(test_fscl_filesys_exists);
 } // end of function main
