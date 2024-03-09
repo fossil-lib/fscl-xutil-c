@@ -66,15 +66,82 @@ typedef struct {
 } ccommandline;
 
 // =================================================================
-// Avalable functions
+// Available Functions
 // =================================================================
+
+/**
+ * Print the usage information for command-line argument parsing.
+ *
+ * @param program_name The name of the program.
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ */
 void fscl_arg_parse_usage(const char* program_name, coption* options, int num_options);
+
+/**
+ * Check if a specific option is present in the parsed command-line arguments.
+ *
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ * @param option_name  The name of the option to check for.
+ * @return             1 if the option is present, 0 otherwise.
+ */
 int fscl_arg_parse_has(coption* options, int num_options, const char* option_name);
+
+/**
+ * Parse the command-line arguments based on the provided options.
+ *
+ * @param cmd          Pointer to the ccommandline structure representing parsed command-line arguments.
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ */
 void fscl_arg_parse(ccommandline* cmd, coption* options, int num_options);
+
+/**
+ * Check for unrecognized command-line arguments and print an error message if found.
+ *
+ * @param cmd          Pointer to the ccommandline structure representing parsed command-line arguments.
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ */
 void fscl_arg_check_unrecognized(ccommandline* cmd, coption* options, int num_options);
+
+/**
+ * Print the parsed options along with their values.
+ *
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ */
 void fscl_arg_print_parsed_options(coption* options, int num_options);
+
+/**
+ * Reset the parsed flags of the options to their initial state.
+ *
+ * @param options      Array of coption structures representing available options.
+ * @param num_options  The number of options in the array.
+ */
 void fscl_arg_reset_parsed_flags(coption* options, int num_options);
+
+/**
+ * Create an array of combo_choice structures for combo-box style options.
+ *
+ * @param names        Array of names for the combo choices.
+ * @param values       Array of values associated with each choice.
+ * @param num_choices  The number of combo choices in the arrays.
+ * @return             Pointer to the created array of combo_choice structures.
+ */
 combo_choice* fscl_arg_create_combo_choices(const char* names[], const int values[], int num_choices);
+
+/**
+ * Create an array of coption structures for command-line argument parsing.
+ *
+ * @param names        Array of names for the options.
+ * @param types        Array of coption_type indicating the types of the options.
+ * @param values       Array of coption_value representing default values for the options.
+ * @param extra_data   Array of pointers to extra data associated with each option (can be NULL).
+ * @param num_options  The number of options in the arrays.
+ * @return             Pointer to the created array of coption structures.
+ */
 coption* fscl_arg_create_options(const char* names[], coption_type types[], coption_value values[], void* extra_data[], int num_options);
 
 #ifdef __cplusplus
