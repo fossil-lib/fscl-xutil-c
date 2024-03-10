@@ -4,7 +4,7 @@ m_dep = cc.find_library('m', required : false)
 code = files(
     'command.c',    'lavalamp.c',
     'filesystem.c', 'arguments.c',
-    'bitwise.c')
+    'bitwise.c',    'money.c')
 
 lib = static_library('fscl-xutil-c',
     code,
