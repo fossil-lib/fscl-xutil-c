@@ -4,8 +4,6 @@ m_dep = cc.find_library('m', required : false)
 code = files(
     'command.c',    'lavalamp.c',
     'filesystem.c', 'arguments.c',
-    'shuffle.c',    'ranges.c',
-    'platform.c',   'assume.c',
     'bitwise.c')
 
 lib = static_library('fscl-xutil-c',
