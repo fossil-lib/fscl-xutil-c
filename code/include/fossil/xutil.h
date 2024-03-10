@@ -21,13 +21,10 @@ extern "C"
 #include "xutil/filesystem.h"
 #include "xutil/arguments.h"
 #include "xutil/lavalamp.h"
-#include "xutil/platform.h"
 #include "xutil/cnullptr.h"
 #include "xutil/command.h"
-#include "xutil/shuffle.h"
 #include "xutil/bitwise.h"
 #include "xutil/assume.h"
-#include "xutil/ranges.h"
 #include "xutil/money.h"
 
 #ifdef __cplusplus
