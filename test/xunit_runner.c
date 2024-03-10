@@ -16,14 +16,9 @@ Description:
 // XUNIT-GROUP: list of test groups for the runner
 //
 XTEST_EXTERN_POOL(test_parser_group);
-XTEST_EXTERN_POOL(test_assume_group);
 XTEST_EXTERN_POOL(test_command_group);
-XTEST_EXTERN_POOL(test_assume_group);
 XTEST_EXTERN_POOL(test_fscl_filesys_group);
 XTEST_EXTERN_POOL(test_random_group);
-XTEST_EXTERN_POOL(test_platform_group);
-XTEST_EXTERN_POOL(test_ranges_group);
-XTEST_EXTERN_POOL(test_shuffle_group);
 
 //
 // XUNIT-TEST RUNNER
@@ -32,14 +27,9 @@ int main(int argc, char **argv) {
     XTEST_CREATE(argc, argv);
 
     XTEST_IMPORT_POOL(test_parser_group);
-    XTEST_IMPORT_POOL(test_assume_group);
     XTEST_IMPORT_POOL(test_command_group);
-    XTEST_IMPORT_POOL(test_assume_group);
     XTEST_IMPORT_POOL(test_fscl_filesys_group);
     XTEST_IMPORT_POOL(test_random_group);
-    XTEST_IMPORT_POOL(test_platform_group);
-    XTEST_IMPORT_POOL(test_ranges_group);
-    XTEST_IMPORT_POOL(test_shuffle_group);
 
     return XTEST_ERASE();
 } // end of func
