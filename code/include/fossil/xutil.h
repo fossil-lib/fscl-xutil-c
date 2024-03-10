@@ -24,7 +24,6 @@ extern "C"
 #include "xutil/cnullptr.h"
 #include "xutil/command.h"
 #include "xutil/bitwise.h"
-#include "xutil/assume.h"
 #include "xutil/money.h"
 
 #ifdef __cplusplus
